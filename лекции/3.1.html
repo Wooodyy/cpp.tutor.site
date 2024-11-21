@@ -1,0 +1,603 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h1>Функции</h1>
+  <h2>Определение и объявление функций</h2>
+  <h3>Определение функции</h3>
+  <p>
+    Функция определяет действия, которые выполняет программа. Функции позволяют
+    выделить набор инструкций и придать ему имя. А затем многократно по
+    присвоенному имени вызывать в различных частях программы. По сути функция -
+    это именованный блок кода.
+  </p>
+  <p>Формальное определение функции выглядит следующим образом:</p>
+  <div>
+    <div id="highlighter_766481" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">тип имя_функции(параметры)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">инструкции</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Первая строка представляет заголовок функции. Вначале указывается
+    возвращаемый тип функции. Если функция не возвращает никакого значения, то
+    используется тип <span class="b">void</span>.
+  </p>
+  <p>
+    Затем идет имя функции, которое представляет произвольный идентификатор. К
+    именованию функции применяются те же правила, что и к именованию переменных.
+  </p>
+  <p>
+    После имени функции в скобках идет перечисление параметров. Функция может не
+    иметь параметров, в этом случае указываются пустые скобки.
+  </p>
+  <p>
+    После заголовка функции в фигурных скобках идет тело функции, которое
+    содержит выполняемые инструкции.
+  </p>
+  <p>
+    Для возвращения результата функция применяет оператор
+    <span class="b">return</span>. Если функция имеет в качестве возвращаемого
+    типа любой тип, кроме void, то она должна обязательно с помощью оператора
+    return возвращать какое-либо значение.
+  </p>
+  <p>
+    Например, определение функции main, которая должна быть в любой программе на
+    языке C++ и с которой начинается ее выполнение:
+  </p>
+  <div>
+    <div id="highlighter_189554" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Возвращаемым типом функции является тип <span class="b">int</span>, поэтому
+    функция должна использовать оператор <span class="b">return</span> и
+    возвращать какое-либо значение, которое соответствует типу int. Возвращаемое
+    значение ставится после оператора return.
+  </p>
+  <p>
+    Но если функция имеет тип <span class="b">void</span>, то ей не надо ничего
+    возвращать. Например, мы могли бы определить следующую функцию:
+  </p>
+  <div>
+    <div id="highlighter_878342" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello()</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"hello\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Выполнение функции</h3>
+  <p>
+    Для выполнения функции ее необходимо вызвать. Вызов функции осуществляется в
+    форме:
+  </p>
+  <div>
+    <div id="highlighter_369011" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">имя_функции(аргументы);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После имени функции указываются скобки, в которых перечисляются аргументы -
+    значения для параметров функции.
+  </p>
+  <p>Например, определим и выполним простейшую функцию:</p>
+  <div>
+    <div id="highlighter_530989" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"hello\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number7 index6 alt2">&nbsp;</div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь определена функция hello, которая вызывается в функции main два раза.
+    В этом и заключается преимущество функций: мы можем вынести некоторые общие
+    действия в отдельную функцию и затем вызывать многократно в различных местах
+    программы. В итоге программа два раза выведет строку "hello".
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+hello
+hello
+</pre
+    >
+  </div>
+  <h3>Объявление функции</h3>
+  <p>
+    При использовании функций стоит учитывать, что компилятор должен знать о
+    функции до ее вызова. Поэтому вызов функции должен происходить после ее
+    определения, как в случае выше. В некоторых языках это не имеет значение, но
+    в языке C++ это играет большую роль. И если, к примеру, мы сначала вызовем,
+    а потом определим функцию, то мы получим ошибку на этапе компиляции, как в
+    следующем случае:
+  </p>
+  <div>
+    <div id="highlighter_282372" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number9 index8 alt2">&nbsp;</div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello()</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"hello\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В этом случае перед вызовом функции надо ее дополнительно объявить.
+    Объявление функции еще называют прототипом. Формальное объявление выглядит
+    следующим образом:
+  </p>
+  <div>
+    <div id="highlighter_315379" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">тип имя_функции(параметры);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Фактически это заголовок функции. То есть для функции hello объявление будет
+    выглядеть следующим образом:
+  </p>
+  <div>
+    <div id="highlighter_437725" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello();</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Используем объявление функции:</p>
+  <div>
+    <div id="highlighter_776368" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">hello();</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">&nbsp;</div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">hello()</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"hello\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае несмотря на то, что определение функции идет после ее
+    вызова, но так как функция уже объявлена до ее вызова, то компилятор уже
+    будет знать о функции hello, и никаких проблем в работе программы не
+    возникнет.
+  </p>
+</div>

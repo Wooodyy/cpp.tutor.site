@@ -1,0 +1,566 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Динамические объекты</h2>
+  <p>
+    В C++ можно использовать различные типы объектов, которые различаются по
+    использованию памяти. Так, глобальные объекты создаются при запуске
+    программы и освобождаются при ее завершении. Локальные автоматические
+    объекты создаются в блоке кода и удаляются, когда этот блок кода завершает
+    работу. Локальные статические объекты создаются перед их первым
+    использованием и освобождаются при завершении программы.
+  </p>
+  <p>
+    Глобальные, а также статические локальные объекты помещаются в статической
+    памяти, а локальные автоматические объекты размещаются в стеке. Объекты в
+    статической памяти и стеке создаются и удаляются компилятором. Статическая
+    память очищается при завершении программы, а объекты из стека существуют,
+    пока выполняется блок, в котором они определены.
+  </p>
+  <p>
+    В дополнение к этим типам в C++ можно создавать
+    <span class="b">динамические объекты</span>. Продолжительность их жизни не
+    зависит от того, где они созданы. Динамические объекты существуют, пока не
+    будут удалены явным образом. Динамические объекты размещаются в
+    <span class="b">динамической памяти</span> (free store).
+  </p>
+  <p>
+    Для управления динамическими объектами применяются операторы
+    <span class="b">new</span> и <span class="b">delete</span>.
+  </p>
+  <p>
+    Оператор <span class="b">new</span> выделяет место в динамической памяти для
+    объекта и возвращает указатель на этот объект.
+  </p>
+  <p>
+    Оператор <span class="b">delete</span> получает указатель на динамический
+    объект и удаляет его из памяти.
+  </p>
+  <h3>Выделение памяти</h3>
+  <p>Создание динамического объекта:</p>
+  <div>
+    <div id="highlighter_689437" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*ptr = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Оператор new создает новый объект типа int в динамической памяти и
+    возвращает указатель на него. Значение такого объекта неопределено.
+  </p>
+  <p>Также можно инициализировать объект при создании:</p>
+  <div>
+    <div id="highlighter_76753" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p1 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">();&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// значение по умолчанию - 0</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"p1: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments">// 0</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p2 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(12);</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"p2: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *p2 &lt;&lt; std::endl;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 12</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Освобождение памяти</h3>
+  <p>
+    Динамические объекты будут существовать пока не будут явным образом удалены.
+    И после завершения использования динамических объектов следует освободить их
+    память с помощью оператора <span class="b">delete</span>:
+  </p>
+  <div>
+    <div id="highlighter_142709" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p1 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(12);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"p1: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments">// 12</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain">p1;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Особенно это надо учитывать, если динамический объект создается в одной
+    части кода, а используется в другой. Например:
+  </p>
+  <div>
+    <div id="highlighter_587665" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">* createPtr(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">value)</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*ptr = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(value);</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">ptr;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">usePtr()</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p1 = createPtr(10);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments">// 10</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain">p1;&nbsp; </code
+                  ><code class="cpp comments">// объект надо освободить</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">usePtr();</code>
+                </div>
+                <div class="line number17 index16 alt2">&nbsp;</div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В функции usePtr получаем из функции createPtr указатель на динамический
+    объект. Однако после выполнения функции usePtr этот объект автоматически не
+    удаляется из памяти (как это происходит в случае с локальными
+    автоматическими объектами). Поэтому его надо явным образом удалить,
+    использовав оператор delete.
+  </p>
+  <p>
+    Использование объекта по указателю после его удаления или повторное
+    применение оператора delete к указателю могут привести к непредсказуемым
+    результатам:
+  </p>
+  <div>
+    <div id="highlighter_971310" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p1 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(12);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments">// 12</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain">p1;</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp comments">// ошибочные сценарии</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// объект по указателю p1 уже удален!</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain">p1;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// объект по указателю p1 уже удален!</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Поэтому следует удалять объект только один раз.</p>
+  <p>
+    Также нередко имеет место ситуация, когда на один и тот же динамический
+    объект указывают сразу несколько указателей. Если оператор delete применен к
+    одному из указателей, то память объекта освобождается, и по второму
+    указателю этот объект мы использовать уже не сможем. Если же после этого ко
+    второму указателю применить оператор delete, то динамическая память может
+    быть нарушена.
+  </p>
+  <p>
+    В то же время недопустимость указателей после применения к ним оператора
+    delete не означает, что эти указатели мы в принципе не сможем использовать.
+    Мы сможем их использовать, если присвоим им адрес другого объекта:
+  </p>
+  <div>
+    <div id="highlighter_463235" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p1 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(12);</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p2 = p1;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain"
+                    >p1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// адреса в p1 и p2 недопустимы</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">&nbsp;</div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">p1 = </code
+                  ><code class="cpp keyword bold">new</code>
+                  <code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">(11);&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// p1 указывает на новый объект</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; *p1 &lt;&lt; std::endl;&nbsp; </code
+                  ><code class="cpp comments">// 11</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">delete</code>
+                  <code class="cpp plain">p1;</code>
+                </div>
+                <div class="line number12 index11 alt1">&nbsp;</div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь после удаления объекта, на который указывает p1, этому указателю
+    передается адрес другого объекта в динамической памяти. Соответственно мы
+    также можем использовать указатель p1. В то же время адрес в указателе p2 по
+    прежнему будет недействительным.
+  </p>
+</div>

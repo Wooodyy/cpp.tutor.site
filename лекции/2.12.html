@@ -1,0 +1,1148 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Условные конструкции</h2>
+
+  <p>
+    Условные конструкции направляют ход программы по одному из возможных путей в
+    зависимости от условия.
+  </p>
+  <h3>Конструкция if</h3>
+  <p>
+    Конструкция <span class="b">if</span> проверяет истинность условия, и если
+    оно истинно, выполняет блок инструкций. Этот оператор имеет следующую
+    сокращенную форму:
+  </p>
+  <div>
+    <div id="highlighter_105811" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(условие)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">инструкции;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В качестве <span class="ii">условия</span> использоваться условное
+    выражение, которое возвращает <span class="b">true</span> или
+    <span class="b">false</span>. Если условие возвращает true, то выполняются
+    последующие инструкции, которые входят в блок if. Если условие возвращает
+    false, то последующие инструкции не выполняются. Блок инструкций заключается
+    в фигурные скобки.
+  </p>
+  <p>Например:</p>
+  <div>
+    <div id="highlighter_346203" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 60;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(x &gt; 50)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is greater than 50 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(x &lt; 30)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is less than 30 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"End of Program"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь определены две условных конструкции if. Они проверят больше или меньше
+    значение переменной x, чем определенное значение. В качестве инструкции в
+    обоих случаях выполняется вывод некоторой строки на консоль.
+  </p>
+  <p>
+    В первом случае <code>x &gt; 50</code> условие истинно, так как значение
+    переменной x действительно больше 50, поэтому это условие возвратит true, и,
+    следовательно, будут выполнятся инструкции, которые входят в блок if.
+  </p>
+  <p>
+    Во втором случае операция отношения <code>x &lt; 30</code> возвратит false,
+    так как условие ложно, поэтому последующий блок инструкций выполняться не
+    будет. В итоге при запуске программы вывод консоли будет выглядеть следующим
+    образом:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+x greater than 50
+End of Program
+</pre
+    >
+  </div>
+  <p>
+    Также мы можем использовать полную форму конструкции if, которая включает
+    оператор else:
+  </p>
+  <div>
+    <div id="highlighter_71652" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(выражение_условия)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">инструкция_1</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">else</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">инструкция_2</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После оператора else мы можем определить набор инструкций, которые
+    выполняются, если условие в операторе if возвращает false. То есть если
+    <span class="ii">условие</span> истинно, выполняются инструкции после
+    оператора if, а если это выражение ложно, то выполняются инструкции после
+    оператора else.
+  </p>
+  <div>
+    <div id="highlighter_509436" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 50;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(x &gt; 60) </code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is greater than 60 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">else</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is less or equal 60 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае условие <code>x &gt; 60</code> ложно, то есть возвращает
+    false, поэтому будет выполняться блок else. И в итоге на консоль будет
+    выведена строка "x is less or equal 60 \n".
+  </p>
+  <p>
+    Однако нередко надо обработать не два возможных альтернативных варианта, а
+    гораздо больше. Например, в случае выше можно насчитать три условия:
+    переменная x может быть больше 60, меньше 60 и равна 60. Для проверки
+    альтернативных условий мы можем вводить выражения
+    <span class="b">else if</span>:
+  </p>
+  <div>
+    <div id="highlighter_803932" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 60;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(x &gt; 60)</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is greater than 60 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp keyword bold">else</code>
+                  <code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(x &lt; 60)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is less than 60 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp keyword bold">else</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is equal 60 \n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть в данном случае мы получаем три ветки развития событий в программе.
+  </p>
+  <p>
+    Если в блоке if или else или else-if необходимо выполнить только одну
+    инструкцию, то фигурные скобки можно опустить:
+  </p>
+  <div>
+    <div id="highlighter_883367" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">x = 60;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="c keyword bold">if</code
+                  ><code class="c plain">(x &gt; 60)</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"x is greater than 60 \n"</code
+                  ><code class="c plain">;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="c keyword bold">else</code>
+                  <code class="c keyword bold">if</code>
+                  <code class="c plain">(x &lt; 60)</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"x is less than 60 \n"</code
+                  ><code class="c plain">;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="c keyword bold">else</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"x is equal 60 \n"</code
+                  ><code class="c plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Конструкция switch</h3>
+  <p>
+    Другую форму организации ветвления программ представляет конструкция
+    <span class="b">switch...case</span>. Она имеет следующую форму:
+  </p>
+  <div>
+    <div id="highlighter_942342" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c keyword bold">switch</code
+                  ><code class="c plain">(выражение)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">case</code>
+                  <code class="c plain">константа_1: инструкции_1;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">case</code>
+                  <code class="c plain">константа_2: инструкции_2;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">default</code
+                  ><code class="c plain">: инструкции;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="c plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После ключевого слова <span class="b">switch</span> в скобках идет
+    сравниваемое выражение. Значение этого выражения последовательно
+    сравнивается со значениями после оператора <span class="b">сase</span>. И
+    если совпадение будет найдено, то будет выполняться определенный блок
+    <span class="b">сase</span>.
+  </p>
+  <p>
+    В конце конструкции switch может стоять блок <span class="b">default</span>.
+    Он необязателен и выполняется в том случае, если значение после switch не
+    соответствует ни одному из операторов case. Например:
+  </p>
+  <div>
+    <div id="highlighter_807517" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 2;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">switch</code
+                  ><code class="cpp plain">(x)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">1: </code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 1"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">break</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">2: </code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 2"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">break</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">3: </code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 3"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">break</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">default</code
+                  ><code class="cpp plain">: </code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is undefined"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">break</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Чтобы избежать выполнения последующих блоков case/default, в конце каждого
+    блока ставится оператор <span class="b">break</span>. То есть в данном
+    случае будет выполняться оператор
+  </p>
+  <div>
+    <div id="highlighter_668272" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">2: </code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 2"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">break</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После выполнения оператора break произойдет выход из конструкции
+    switch..case, и остальные операторы case будут проигнорированы. Поэтому на
+    консоль будет выведена следующая строка
+  </p>
+  <div class="console"><pre class="consoletext">x = 2</pre></div>
+  <p>
+    Стоит отметить важность использования оператора break. Если мы его не укажем
+    в блоке case, то после этого блока выполнение перейдет к следующему блоку
+    case. Например, уберем из предыдущего примера все операторы break:
+  </p>
+  <div>
+    <div id="highlighter_529295" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 2;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">switch</code
+                  ><code class="cpp plain">(x)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">1: </code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 1"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">2: </code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 2"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">case</code>
+                  <code class="cpp plain">3: </code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x = 3"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">default</code
+                  ><code class="cpp plain">: </code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"x is undefined"</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В этом случае опять же будет выполняться оператор <code>case 2:</code>, так
+    как переменная x=2. Однако так как этот блок case не завершается оператором
+    break, то после его завершения будет выполняться набор инструкций после
+    <code>case 3:</code> даже несмотря на то, что переменная x по прежнему равна
+    2. В итоге мы получим следующий консольный вывод:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+x = 2
+x = 3
+x is undefined
+</pre
+    >
+  </div>
+  <h3>Тернарный оператор</h3>
+  <p>
+    Тернарный оператор <span class="b">?:</span> позволяет сократить определение
+    простейших условных конструкций if и имеет следующую форму:
+  </p>
+  <div>
+    <div id="highlighter_987207" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c plain"
+                    >[первый операнд - условие] ? [второй операнд] : [третий
+                    операнд]</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Оператор использует сразу три операнда. В зависимости от условия тернарный
+    оператор возвращает второй или третий операнд: если условие равно true (то
+    есть истинно), то возвращается второй операнд; если условие равно false (то
+    есть ложно), то третий. Например:
+  </p>
+  <div>
+    <div id="highlighter_521653" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c preprocessor">#include &lt;iostream&gt;</code>
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c functions bold">setlocale</code
+                  ><code class="c plain">(LC_ALL, </code
+                  ><code class="c string">""</code
+                  ><code class="c plain">);</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain">x = 5; </code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain">y = 3;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c color1 bold">char</code>
+                  <code class="c plain">sign;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"Введите знак операции: "</code
+                  ><code class="c plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cin &gt;&gt; sign;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain">result = sign==</code
+                  ><code class="c string">'+'</code
+                  ><code class="c plain">?x + y:x - y;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"Результат: "</code>
+                  <code class="c plain">&lt;&lt; result &lt;&lt; </code
+                  ><code class="c string">"\n"</code
+                  ><code class="c plain">;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">return</code>
+                  <code class="c plain">0;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="c plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае производится ввод знака операции. Здесь результатом
+    тернарной операции является переменная result. И если переменная sign
+    содержит знак "+", то result будет равно второму операнду - (x+y). Иначе
+    result будет равно третьему операнду.
+  </p>
+</div>

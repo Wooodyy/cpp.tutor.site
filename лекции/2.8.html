@@ -1,0 +1,305 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Побитовые операции</h2>
+
+  <p>
+    Побитовые операции выполняются над отдельными разрядами или битами чисел.
+    Данные операции производятся только над целыми числами.
+  </p>
+  <h3>Операции сдвига</h3>
+  <p>
+    Каждое целое число в памяти представлено в виде определенного количества
+    разрядов. И операции сдвига позволяют сдвинуть битовое представление числа
+    на несколько разрядов вправо или влево. Операции сдвига применяются только к
+    целочисленным операндам. Есть две операции:
+  </p>
+  <ul>
+    <li>
+      <p><span class="b">&lt;&lt;</span></p>
+      <p>
+        Сдвигает битовое представление числа, представленного первым операндом,
+        влево на определенное количество разрядов, которое задается вторым
+        операндом.
+      </p>
+    </li>
+    <li>
+      <p><span class="b">&gt;&gt;</span></p>
+      <p>
+        Сдвигает битовое представление числа вправо на определенное количество
+        разрядов.
+      </p>
+    </li>
+  </ul>
+  <p>Применение операций:</p>
+  <div>
+    <div id="highlighter_183743" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >a = 2 &lt;&lt;
+                    2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments"
+                    >// 10&nbsp; на два разрядов влево = 1000 - 8</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >b = 16 &gt;&gt;
+                    3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments"
+                    >// 10000 на три разряда вправо = 10 - 2</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Число 2 в двоичном представлении 10. Если сдвинуть число 10 на два разряда
+    влево, то получится 1000, что в десятичной системе равно число 8.
+  </p>
+  <p>
+    Число 16 в двоичном представлении 10000. Если сдвинуть число 10 на три
+    разряда вправо (три последних разряда отбрасываются), то получится 10, что в
+    десятичной системе представляет число 2.
+  </p>
+  <h3>Поразрядные операции</h3>
+  <p>
+    Поразрядные операции также проводятся только над соответствующими разрядами
+    целочисленных операндов:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">&amp;</span>: поразрядная конъюнкция (операция И или
+        поразрядное умножение). Возвращает 1, если оба из соответствующих
+        разрядов обоих чисел равны 1
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">|</span>: поразрядная дизъюнкция (операция ИЛИ или
+        поразрядное сложение). Возвращает 1, если хотя бы один из
+        соответствующих разрядов обоих чисел равен 1
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">^</span>: поразрядное исключающее ИЛИ. Возвращает 1,
+        если только один из соответствующих разрядов обоих чисел равен 1
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">~</span>: поразрядное отрицание или инверсия.
+        Инвертирует все разряды операнда. Если разряд равен 1, то он становится
+        равен 0, а если он равен 0, то он получает значение 1.
+      </p>
+    </li>
+  </ul>
+  <p>Применение операций:</p>
+  <div>
+    <div id="highlighter_847071" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >a = 5 |
+                    2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 101 | 010 = 111&nbsp; - 7</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >b = 6 &amp;
+                    2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments"
+                    >// 110 &amp; 010 = 10&nbsp; - 2</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >c = 5 ^
+                    2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 101 ^ 010 = 111 - 7</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >d =
+                    ~9;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// -10</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Например, выражение <code>5 | 2</code> равно 7. Число 5 в двоичной записи
+    равно 101, а число 2 - 10 или 010. Сложим соответствующие разряды обоих
+    чисел. При сложении если хотя бы один разряд равен 1, то сумма обоих
+    разрядов равна 1. Поэтому получаем:
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    В итоге получаем число 111, что в десятичной записи представляет число 7.
+  </p>
+  <p>
+    Возьмем другое выражение <code>6 &amp; 2</code>. Число 6 в двоичной записи
+    равно 110, а число 2 - 10 или 010. Умножим соответствующие разряды обоих
+    чисел. Произведение обоих разрядов равно 1, если оба этих разряда равны 1.
+    Иначе произведение равно 0. Поэтому получаем:
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Получаем число 010, что в десятичной системе равно 2.</p>
+</div>

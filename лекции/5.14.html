@@ -1,0 +1,1406 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Перегрузка операторов</h2>
+
+  <p>
+    Перегрузка операторов позволяет определить действия, которые будет выполнять
+    оператор. Перегрузка подразумевает создание функции, название которой
+    содержит слово <span class="b">operator</span> и символ перегружаемого
+    оператора. Функция оператора может быть определена как член класса, либо вне
+    класса.
+  </p>
+  <p>
+    Перегрузить можно только те операторы, которые уже определены в C++. Создать
+    новые операторы нельзя.
+  </p>
+  <p>
+    Если функция оператора определена как отдельная функция и не является членом
+    класса, то количество параметров такой функции совпадает с количеством
+    операндов оператора. Например, у функции, которая представляет унарный
+    оператор, будет один параметр, а у функции, которая представляет бинарный
+    оператор, - два параметра. Если оператор принимает два операнда, то первый
+    операнд передается первому параметру функции, а второй операнд - второму
+    параметру. При этом как минимум один из параметров должен представлять тип
+    класса
+  </p>
+  <p>
+    Рассмотрим пример с классом Counter, который представляет секундомер и
+    хранит количество секунд:
+  </p>
+  <div>
+    <div id="highlighter_739541" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Counter</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">sec)</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds = sec;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display() </code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; seconds &lt;&lt; </code
+                  ><code class="cpp string">" seconds"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number16 index15 alt1">&nbsp;</div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp plain"
+                    >Counter operator + (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain"
+                    >Counter(c1.seconds + c2.seconds);</code
+                  >
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number21 index20 alt2">&nbsp;</div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c2(10);</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c3 = c1 + c2;</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">c3.display();&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 30 seconds</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь функция оператора не является частью класса Counter и определена вне
+    его. Данная функция перегружает оператор сложения для типа Counter. Она
+    является бинарной, поэтому принимает два параметра. В данном случае мы
+    складываем два объекта Counter. Возвращает функция также объект Counter,
+    который хранит общее количесто секунд. То есть по сути здесь операция
+    сложения сводится к сложению секунд обоих объектов:
+  </p>
+  <div>
+    <div id="highlighter_836176" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain"
+                    >Counter operator + (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain"
+                    >Counter(c1.seconds + c2.seconds);</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    При этом необязательно возвращать объект класса. Это может быть и объект
+    встроенного примитивного типа. И также мы можем определять дополнительные
+    перегруженные функции операторов:
+  </p>
+  <div>
+    <div id="highlighter_157659" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">operator + (Counter c1, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">s)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">c1.seconds + s;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Данная версия складывает объект Counter с числом и возвращает также число.
+    Поэтому левый операнд операции должен представлять тип Counter, а правый
+    операнд - тип int. И, к примеру, мы можем применить данную версию оператора
+    следующим образом:
+  </p>
+  <div>
+    <div id="highlighter_54127" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds = c1 + 25;&nbsp; </code
+                  ><code class="cpp comments">// 45</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; seconds &lt;&lt; std::endl;</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также функции операторов могут быть определены как члены классов. Если
+    функция оператора определена как член класса, то левый операнд доступен
+    через указатель this и представляет текущий объект, а правый операнд
+    передается в подобную функцию в качестве единственного параметра:
+  </p>
+  <div>
+    <div id="highlighter_567124" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Counter</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">sec)</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds = sec;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display() </code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; seconds &lt;&lt; </code
+                  ><code class="cpp string">" seconds"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >Counter operator + (Counter c2)</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">Counter(</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">-&gt;seconds + c2.seconds);</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">operator + (</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">s)</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">-&gt;seconds + s;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number24 index23 alt1">&nbsp;</div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c2(10);</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c3 = c1 + c2;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >c3.display();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 30 seconds</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds = c1 + 25;&nbsp; </code
+                  ><code class="cpp comments">// 45</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае к левому операнду в функциях операторов мы обращаемся через
+    указатель this.
+  </p>
+  <p>
+    Какие операторы где переопределять? Операторы присвоения, индексирования
+    ([]), вызова (()), доступа к члену класса по указателю (-&gt;) следует
+    определять в виде функций-членов класса. Операторы, которые изменяют
+    состояние объекта или непосредственно связаны с объектом (инкремент,
+    декремент,), обычно также определяются в виде функций-членов класса. Все
+    остальные операторы чаще определяются как отдельные функции, а не члены
+    класса.
+  </p>
+  <h3>Операторы сравнения</h3>
+  <p>
+    Ряд операторов перегружаются парами. Например, если мы определяем оператор
+    <span class="b">==</span>, то необходимо также определить и оператор
+    <span class="b">!=</span>. А при определении оператора
+    <span class="b">&lt;</span> надо также определять функцию для оператора
+    <span class="b">&gt;</span>. Например, перегрузим данные операторы:
+  </p>
+  <div>
+    <div id="highlighter_478086" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >operator == (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">c1.seconds == c2.seconds;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >operator != (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">c1.seconds != c2.seconds;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >operator &gt; (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">c1.seconds &gt; c2.seconds;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >operator &lt; (Counter c1, Counter c2)</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">c1.seconds &lt; c2.seconds;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c2(10);</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >b1 = c1 == c2;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// false</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >b2 = c1 &gt; c2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// true</code>
+                </div>
+                <div class="line number23 index22 alt2">&nbsp;</div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; b1 &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; b2 &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Операторы присвоения</h3>
+  <p>Операторы присвоения обычно возвращает ссылку на свой левый операнд:</p>
+  <div>
+    <div id="highlighter_646844" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Counter</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">sec)</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds = sec;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display() </code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; seconds &lt;&lt; </code
+                  ><code class="cpp string">" seconds"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >Counter&amp; operator += (Counter c2)</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds += c2.seconds;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c2(10);</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">c1 += c2;</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">c1.display();&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 30 seconds</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Операции инкремента и декремента</p>
+  <p>
+    Особую сложность может представлять переопределение операций инкремента и
+    декремента, поскольку нам надо определить и префиксную, и постфиксную форму
+    для этих операторов. Определим подобные операторы для типа Counter:
+  </p>
+  <div>
+    <div id="highlighter_22043" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+              <div class="line number42 index41 alt1">42</div>
+              <div class="line number43 index42 alt2">43</div>
+              <div class="line number44 index43 alt1">44</div>
+              <div class="line number45 index44 alt2">45</div>
+              <div class="line number46 index45 alt1">46</div>
+              <div class="line number47 index46 alt2">47</div>
+              <div class="line number48 index47 alt1">48</div>
+              <div class="line number49 index48 alt2">49</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Counter</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">sec)</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds = sec;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display() </code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; seconds &lt;&lt; </code
+                  ><code class="cpp string">" seconds"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments">// префиксные операторы</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter&amp; operator++ ()</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds += 5;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter&amp; operator-- ()</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds -= 5;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments">// постфиксные операторы</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter operator++ (</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">)</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter prev = *</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">++*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">prev;</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter operator-- (</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">)</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter prev = *</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">--*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">prev;</code>
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">seconds;</code>
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number42 index41 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c1(20);</code>
+                </div>
+                <div class="line number43 index42 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter c2 = c1++;</code>
+                </div>
+                <div class="line number44 index43 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >c2.display();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 20 seconds</code>
+                </div>
+                <div class="line number45 index44 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >c1.display();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 25 seconds</code>
+                </div>
+                <div class="line number46 index45 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">--c1;</code>
+                </div>
+                <div class="line number47 index46 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >c1.display();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 20 seconds</code>
+                </div>
+                <div class="line number48 index47 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number49 index48 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Префиксные операторы должны возвращать ссылку на текущий объект, который
+    можно получить с помощью указателя this:
+  </p>
+  <div>
+    <div id="highlighter_139219" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Counter&amp; operator++ ()</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">seconds += 5;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В самой функции можно определить некоторую логику по инкременту значения. В
+    данном случае количество секунд увеличивается на 5.
+  </p>
+  <p>
+    Постфиксные операторы должны возвращать значение объекта до инкремента, то
+    есть предыдущее состояние объекта. Чтобы постфиксная форма отличалась от
+    префиксной постфиксные версии получают дополнительный параметр типа int,
+    который не используется. Хотя в принципе мы можем его использовать.
+  </p>
+  <div>
+    <div id="highlighter_73760" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Counter operator++ (</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Counter prev = *</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">++*</code
+                  ><code class="cpp keyword bold">this</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">prev;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

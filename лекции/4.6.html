@@ -1,0 +1,481 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Указатели в параметрах функции</h2>
+
+  <p>
+    Параметры функции в C++ могут представлять указатели. Указатели передаются в
+    функцию по значению, то есть функция получает копию указателя. В то же время
+    копия указателя будет в качестве значения иметь тот же адрес, что
+    оригинальный указатель. Поэтому используя в качестве параметров указатели,
+    мы можем получить доступ к значению аргумента и изменить его.
+  </p>
+  <p>
+    Например, пусть у нас будет простейшая функция, которая увеличивает число на
+    единицу:
+  </p>
+  <div>
+    <div id="highlighter_674181" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = 10;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">increment(n);</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"main function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; x &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">x++;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"increment function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; x &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь переменная n передается в качестве аргумента для параметра x. Передача
+    происходит по значению, поэтому любое изменение параметра x в функции
+    increment никак не скажется на значении переменной n. Что мы можем увидеть,
+    запустим программу:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+increment function: 11
+main function: 10
+</pre
+    >
+  </div>
+  <p>
+    Теперь изменим функцию increment, использовав в качестве параметра
+    указатель:
+  </p>
+  <div>
+    <div id="highlighter_978196" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">*);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = 10;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">increment(&amp;n);</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"main function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; n &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*x)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">(*x)++;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"increment function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; *x &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для изменения значения параметра применяется операция разыменования с
+    последующим инкрементом: <code>(*x)++</code>. Это изменяет значение, которое
+    находится по адресу, хранимому в указателе x.
+  </p>
+  <p>
+    Поскольку теперь функция в качестве параметра принимает указатель, то при ее
+    вызове необходимо передать адрес переменной:
+    <code>increment(&amp;n);</code>.
+  </p>
+  <p>В итоге изменение параметра x также повлияет на переменную n:</p>
+  <div class="console">
+    <pre class="consoletext">
+increment function: 11
+main function: 11
+</pre
+    >
+  </div>
+  <p>
+    В то же время поскольку аргумент передается в функцию по значению, то есть
+    функция получает копию адреса, то если внутри функции будет изменен адрес
+    указателя, то это не затронет внешний указатель, который передается в
+    качестве аргумента:
+  </p>
+  <div>
+    <div id="highlighter_525894" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">*);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = 10;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*ptr = &amp;n;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">increment(ptr);</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"main function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; n &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">increment(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*x)</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">z = 6;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >x = &amp;z;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// переустанавливаем адрес указателя x</code
+                  >
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"increment function: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt;&nbsp; *x &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В функцию increment передается указатель ptr. При вызове функция получает
+    копию этого указателя в виде парамета x. В функции изменяется адрес
+    указателя x. Но это никак не затронет указатель ptr, так как он предствляет
+    другую копию. В итоге поле переустановки адреса указатели x и ptr будут
+    хранить разные адреса.
+  </p>
+  <p>Результат работы программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+increment function: 6
+main function: 10
+</pre
+    >
+  </div>
+</div>

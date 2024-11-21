@@ -1,0 +1,629 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h1>Указатели</h1>
+  <h2>Что такое указатели</h2>
+
+  <p>
+    Указатели представляют собой объекты, значением которых служат адреса других
+    объектов (переменных, констант, указателей) или функций. Как и ссылки,
+    указатели применяются для косвенного доступа к объекту. Однако в отличие от
+    ссылок указатели обладают большими возможностями.
+  </p>
+  <p>
+    Для определения указателя надо указать тип объекта, на который указывает
+    указатель, и символ звездочки *. Например, определим указатель на объект
+    типа int:
+  </p>
+  <div>
+    <div id="highlighter_841676" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Пока указатель не ссылается ни на какой объект. При этом в отличие от ссылки
+    указатель необязательно инициализировать каким-либо значением. Теперь
+    присвоим указателю адрес переменной:
+  </p>
+  <div>
+    <div id="highlighter_51526" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 10;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// определяем переменную</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// определяем указатель</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >p = &amp;x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// указатель получает адрес переменной</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для получения адреса переменной применяется операция
+    <span class="b">&amp;</span>. Что важно, переменная x имеет тип int, и
+    указатель, который указывает на ее адрес, тоже имеет тип int. То есть должно
+    быть соответствие по типу.
+  </p>
+  <p>
+    Если мы попробуем вывести адрес переменной на консоль, то увидим, что он
+    представляет шестнадцатиричное значение:
+  </p>
+  <div>
+    <div id="highlighter_83907" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 10;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// определяем переменную</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// определяем указатель</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >p = &amp;x;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// указатель получает адрес переменной</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"p = "</code>
+                  <code class="cpp plain">&lt;&lt; p &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+p = 0x60fe98
+</pre
+    >
+  </div>
+  <p>
+    В каждом отдельном случае адрес может отличаться, но к примеру, в моем
+    случае машинный адрес переменной x - 0x60fe98. То есть в памяти компьютера
+    есть адрес 0x60fe98, по которому располагается переменная x. Так как
+    переменная x представляет тип <span class="b">int</span>, то на большинстве
+    архитектур она будет занимать следующие 4 байта (на конкретных архитектурах
+    размер памяти для типа int может отличаться). Таким образом, переменная типа
+    int последовательно займет ячейки памяти с адресами 0x60FE98, 0x60FE99,
+    0x60FE9A, 0x60FE9B.
+  </p>
+  <img
+    src="https://metanit.com/cpp/tutorial/pics/5.1.png"
+    alt="Указатели в C++"
+  />
+  <p>
+    И указатель <span class="b">p</span> будет ссылаться на адрес, по которому
+    располагается переменная x, то есть на адрес 0x60FE98.
+  </p>
+  <p>
+    Но так как указатель хранит адрес, то мы можем по этому адресу получить
+    хранящееся там значение, то есть значение переменной x. Для этого
+    применяется операция <span class="b">*</span> или операция разыменования, то
+    есть та операция, которая применяется при определении указателя. Результатом
+    этой операции всегда является объект, на который указывает указатель.
+    Применим данную операцию и получим значение переменной x:
+  </p>
+  <div>
+    <div id="highlighter_156147" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 10;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">p = &amp;x;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Address = "</code>
+                  <code class="cpp plain">&lt;&lt; p &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Value = "</code>
+                  <code class="cpp plain">&lt;&lt; *p &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Address = 0x60fe98
+Value = 10
+</pre
+    >
+  </div>
+  <p>
+    Значение, которое получено в результате операции разыменования, можно
+    присвоить другой переменной:
+  </p>
+  <div>
+    <div id="highlighter_415818" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*p&nbsp; = &amp;x;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">y = *p;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Value = "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; y &lt;&lt; std::endl;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 10</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    И также используя указатель, мы можем менять значение по адресу, который
+    хранится в указателе:
+  </p>
+  <div>
+    <div id="highlighter_759585" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">x = 10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">*p = &amp;x;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="c plain">*p = 45;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c plain">std::cout &lt;&lt; </code
+                  ><code class="c string">"x = "</code>
+                  <code class="c plain"
+                    >&lt;&lt; x &lt;&lt; std::endl;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 45</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Так как по адресу, на который указывает указатель, располагается переменная
+    x, то соответственно ее значение изменится.
+  </p>
+  <p>Создадим еще несколько указателей:</p>
+  <div>
+    <div id="highlighter_102664" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">short</code>
+                  <code class="cpp plain">c = 12;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">d = 10;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">short</code>
+                  <code class="cpp plain">s = 2;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">short</code>
+                  <code class="cpp plain"
+                    >*pc =
+                    &amp;c;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// получаем адрес переменной с типа short</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >*pd =
+                    &amp;d;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// получаем адрес переменной d типа int</code
+                  >
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">short</code>
+                  <code class="cpp plain"
+                    >*ps =
+                    &amp;s;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// получаем адрес переменной s типа short</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Variable c: address="</code>
+                  <code class="cpp plain">&lt;&lt; pc &lt;&lt; </code
+                  ><code class="cpp string">"\t value="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *pc &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Variable d: address="</code>
+                  <code class="cpp plain">&lt;&lt; pd &lt;&lt; </code
+                  ><code class="cpp string">"\t value="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *pd &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Variable s: address="</code>
+                  <code class="cpp plain">&lt;&lt; ps &lt;&lt; </code
+                  ><code class="cpp string">"\t value="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *ps &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>В моем случае я получу следующий консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Variable c: address=0x60fe92	value=12
+Variable d: address=0x60fe8c	value=10
+Variable s: address=0x60fe8a	value=2
+</pre
+    >
+  </div>
+  <p>
+    По адресам можно увидеть, что переменные часто расположены в памяти рядом,
+    но не обязательно в том порядке, в котором они определены в коде программы:
+  </p>
+  <img
+    src="https://metanit.com/cpp/tutorial/pics/5.2.png"
+    alt="Работа с памятью в языке C++"
+  />
+</div>

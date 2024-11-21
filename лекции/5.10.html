@@ -1,0 +1,1327 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Наследование</h2>
+
+  <p>
+    <span class="b">Наследование</span> (inheritance) представляет один из
+    ключевых аспектов объектно-ориентированного программирования, который
+    позволяет наследовать функциональность одного класса или базового класса
+    (base class) в другом - производном классе (derived class).
+  </p>
+  <p>
+    Зачем нужно наследование? Рассмотрим небольшую ситуацию, допустим, у нас
+    есть классы, которые представляют человека и работника предприятия:
+  </p>
+  <div>
+    <div id="highlighter_772002" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">//&nbsp; имя</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// возраст</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Employee</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// имя</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// возраст</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string company;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// компания</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае класс Employee фактически содержит функционал класса Person:
+    свойства name и age и функцию display. И было бы не совсем правильно
+    повторять функциональность одного класса в другом классе, тем более что по
+    сути сотрудник предприятия в любом случае является человеком. Поэтому в этом
+    случае лучше использовать механизм наследования. Унаследуем класс Employee
+    от класса Person:
+  </p>
+  <div>
+    <div id="highlighter_51196" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">//&nbsp; имя</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// возраст</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Employee : </code
+                  ><code class="cpp keyword bold">public</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string company;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// компания</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для установки отношения наследования после название класса ставится
+    двоеточие, затем идет название класса, от которого мы хотим унаследовать
+    функциональность. В этом отношении класс Person еще будет называться базовым
+    классом, а Employee - производным классом.
+  </p>
+  <p>
+    Перед названием базового класса также можно указать спецификатор доступа,
+    как в данном случае используется спецификатор <span class="b">public</span>,
+    который позволяет использовать в производном классе все открытые члены
+    базового класса. Если мы не используем модификатор доступа, то класс
+    Employee ничего не будет знать о переменных name и age и функции display.
+  </p>
+  <p>
+    После установки наследования мы можем убрать из класса Employee те
+    переменные, которые уже определены в классе Person. Используем оба класса:
+  </p>
+  <div>
+    <div id="highlighter_671288" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">//&nbsp; имя</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >age;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// возраст</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Employee : </code
+                  ><code class="cpp keyword bold">public</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string company;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// компания</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number19 index18 alt2">&nbsp;</div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.name = </code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.age = 23;</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.display();</code>
+                </div>
+                <div class="line number26 index25 alt1">&nbsp;</div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Employee bob;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.name = </code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.age = 31;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.company = </code
+                  ><code class="cpp string">"Microsoft"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.display();</code>
+                </div>
+                <div class="line number32 index31 alt1">&nbsp;</div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Таким образом, через переменную класса Employee мы можем обращаться ко всем
+    открытым членам класса Person.
+  </p>
+  <h3>Конструкторы</h3>
+  <p>
+    Стоит учитывать, что конструкторы при наследовании не наследуются. И если
+    базовый класс содержит только конструкторы с параметрами, то производный
+    класс должен вызывать в своем конструкторе один из конструкторов базового
+    класса. Например, добавим в классы выше конструкторы:
+  </p>
+  <div>
+    <div id="highlighter_161045" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n; age = a;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Employee : </code
+                  ><code class="cpp keyword bold">public</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Employee(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, std::string c):Person(n, a)</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">company = c;</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string company;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number29 index28 alt2">&nbsp;</div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">, 23);</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.display();</code>
+                </div>
+                <div class="line number34 index33 alt1">&nbsp;</div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Employee bob(</code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">, 31, </code
+                  ><code class="cpp string">"Microsoft"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.display();</code>
+                </div>
+                <div class="line number37 index36 alt2">&nbsp;</div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После списка параметров конструктора производного класса через двоеточие
+    идет вызов конструктора базового класса, в который передаются значения
+    параметров n и a.
+  </p>
+  <div>
+    <div id="highlighter_742664" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Employee(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, std::string c):Person(n, a)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">company = c;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Если бы мы не вызвали конструктор базового класса, то это было бы ошибкой.
+  </p>
+
+  <p>Консольный вывод программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+Name: Tom	Age: 23
+Name: Bob	Age: 31
+</pre
+    >
+  </div>
+  <p>Таким образом, в строке</p>
+  <div>
+    <div id="highlighter_693199" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Employee bob(</code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">, 31, </code
+                  ><code class="cpp string">"Microsoft"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Вначале будет вызываться конструктор базового класса Person, в который будут
+    передаваться значения "Bob" и 31. И таким образом будут установлены имя и
+    возраст. Затем будет выполняться собственно конструктор Employee, который
+    установит компанию.
+  </p>
+  <p>Также мы могли бы определить конструктор Employee следующим обазом:</p>
+  <div>
+    <div id="highlighter_188025" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Employee(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >a, std::string c):Person(n, a), company(c)</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также в примере выше стои отметить, что переменные в обоих классах стали
+    закрытыми, то есть они объявлены со спецификатором private. Производный
+    класс не может обращаться к закрытым членам базового класса. Поэтому, если
+    бы мы попробовали обратиться к закрытым переменным класса Person через
+    переменную класса Employee, то мы бы получили ошибку:
+  </p>
+  <div>
+    <div id="highlighter_702482" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">Employee bob(</code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">, 31, </code
+                  ><code class="cpp string">"Microsoft"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">bob.name = </code
+                  ><code class="cpp string">"Bobby"</code
+                  ><code class="cpp plain">;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// ошибка</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >bob.age =
+                    23;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// ошибка</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Спецификатор protected</h3>
+  <p>
+    С помощью спецификатора <span class="b">public</span> можно определить
+    общедоступные открытые члены классы, которые доступны извне и их можно
+    использовать в любой части программы. С помощью спецификатора
+    <span class="b">private</span> можно определить закрытые переменные и
+    функции, которые можно использовать только внутри своего класса. Однако
+    иногда возникает необходимость в таких переменных и методах, которые были бы
+    доступны классам-наследникам, но не были бы доступны извне. И именно для
+    определения уровня доступа подобных членов класса используется спецификатор
+    <span class="b">protected</span>.
+  </p>
+  <p>Например, определим переменную name со спецификатором protected:</p>
+  <div>
+    <div id="highlighter_629907" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+              <div class="line number42 index41 alt1">42</div>
+              <div class="line number43 index42 alt2">43</div>
+              <div class="line number44 index43 alt1">44</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n; age = a;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display()</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp keyword bold">protected</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Employee : </code
+                  ><code class="cpp keyword bold">public</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Employee(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, std::string c):Person(n, a)</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">company = c;</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">showEmployeeName()</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Employee Name: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; name &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string company;</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number34 index33 alt1">&nbsp;</div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">, 23);</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// tom.name = "Tommy";&nbsp; ошибка</code
+                  >
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Employee bob(</code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">, 31, </code
+                  ><code class="cpp string">"Microsoft"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// bob.name = "Bob Tompson";&nbsp;&nbsp;&nbsp; ошибка</code
+                  >
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">bob.showEmployeeName();</code>
+                </div>
+                <div class="line number42 index41 alt1">&nbsp;</div>
+                <div class="line number43 index42 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number44 index43 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Таким образом, мы можем использовать переменную name в производном классе,
+    например, в методе showEmployeeName, но извне мы к ней обратиться
+    по-прежнему не можем.
+  </p>
+  <h3>Запрет наследования</h3>
+  <p>
+    Иногда наследование от класса может быть нежелательно. И с помощью
+    спецификатора <span class="b">final</span> мы можем запретить наследование:
+  </p>
+  <div>
+    <div id="highlighter_534614" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">User final</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После этого мы не сможем унаследовать другие классы от класса User. И,
+    например, если мы попробуем написать, как в случае ниже, то мы столкнемся с
+    ошибкой:
+  </p>
+  <div>
+    <div id="highlighter_551698" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">VipUser : </code
+                  ><code class="cpp keyword bold">public</code>
+                  <code class="cpp plain">User</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

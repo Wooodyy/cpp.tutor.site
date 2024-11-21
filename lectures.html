@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Лекции По С++</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="gtco-loader"></div>
+
+    <div id="page">
+      <nav class="gtco-nav" role="navigation" style="background-color: #333">
+        <div class="gtco-container">
+          <div class="row">
+            <div class="col-sm-2 col-xs-12">
+              <div id="gtco-logo">
+                <a href="index.html"><img src="images/logo.png" /></a>
+              </div>
+            </div>
+            <div class="col-xs-10 text-right menu-1">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О Разработчике</a></li>
+                <li>
+                  <a style="color: white" href="lectures.html">Лекции</a>
+                </li>
+                <li><a href="tests.html">Тесты</a></li>
+                <li><a href="labs.html">Лабораторные работы</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="gtco-section gtco-testimonial gtco-gray"
+        style="margin-top: 0px; margin-bottom: 0px; background-color: white"
+      >
+        <div class="gtco-container">
+          <div class="container">
+            <h1>Основы по языку программирования C++</h1>
+            <style>
+              .acor-container {
+                margin: 20px 0;
+              }
+              .acor-container .acor-body {
+                width: calc(100% - 40px);
+                margin: 0 auto;
+                height: 0;
+                color: rgba(0, 0, 0, 0);
+                background-color: #e5fcff;
+                line-height: 18px;
+                padding: 0 30px;
+                box-sizing: border-box;
+                transition: color 0.5s, padding 0.5s;
+                overflow: hidden;
+                font-family: Verdana, sans-serif;
+                font-size: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                  0 10px 16px rgba(0, 0, 0, 0.2);
+              }
+              .acor-container .acor-body p {
+                margin: 0 0 10px;
+              }
+              .acor-container label {
+                border-radius: 20px;
+                cursor: pointer;
+                background-color: #333;
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                color: #bfe2ff;
+                font-weight: 300;
+                box-sizing: border-box;
+                z-index: 100;
+                font-family: Verdana, sans-serif;
+                font-size: 18px;
+                margin: 0 0 5px;
+                transition: color 0.35s;
+              }
+              .acor-container label:hover {
+                color: #fff;
+              }
+              .acor-container input {
+                display: none;
+              }
+              .acor-container label:before {
+                content: "\276F";
+                float: right;
+              }
+              .acor-container input:checked + label {
+                background-color: #009297;
+                color: #fff;
+              }
+              .acor-container input:checked + label:before {
+                transition: transform 0.35s;
+                transform: rotate(90deg);
+              }
+              .acor-container input:checked + label + .acor-body {
+                height: auto;
+                margin-top: -5px;
+                color: #000;
+                padding: 20px 30px 10px;
+              }
+
+              h3 {
+                font-family: Calibri;
+              }
+              .rounded {
+                counter-reset: li;
+                list-style: none;
+                font: 16px "Trebuchet MS", "Lucida Sans";
+                padding: 0;
+              }
+              .rounded a {
+                width: auto;
+                position: relative;
+                display: block;
+                padding: 0.4em 2em 0.4em 2em;
+                margin: 0.5em 0;
+                background: #333;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                border-radius: 0.3em;
+                transition: 0.3s ease-out;
+              }
+              .rounded a:hover {
+                background: #e9e4e0;
+                color: rgb(0, 31, 56);
+              }
+              .rounded a:hover:before {
+                transform: rotate(360deg);
+              }
+              .rounded a:before {
+                content: counter(li);
+                counter-increment: li;
+                position: absolute;
+                top: 65%;
+                left: -1.3em;
+                margin-top: -1.3em;
+                background: #00a1a1;
+                height: 2em;
+                width: 2em;
+                line-height: 1.5em;
+                border: 0.3em solid white;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 2em;
+                transition: all 0.3s ease-out;
+              }
+            </style>
+            <div class="acor-container">
+              <input type="radio" name="acor" id="acor1" checked="checked" />
+              <label for="acor1">Глава 1. Введение в C++</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=1.1?var2=Язык программирования C++?var3=Глава 1. Введение в C++"
+                      >Язык программирования C++</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=1.2?var2=Первая программа в Visual Studio?var3=Глава 1. Введение в C++"
+                      >Первая программа в Visual Studio</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=1.3?var2=Локализация и кириллица в консоли?var3=Глава 1. Введение в C++"
+                      >Локализация и кириллица в консоли</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor2" />
+              <label for="acor2"
+                >Глава 2. Основы языка программирования C++</label
+              >
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.1?var2=Структура программы?var3=Глава 2. Основы языка программирования C++"
+                      >Структура программы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.2?var2=Переменные?var3=Глава 2. Основы языка программирования C++"
+                      >Переменные</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.3?var2=Типы данных?var3=Глава 2. Основы языка программирования C++"
+                      >Типы данных</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.4?var2=Статическая типизация и преобразования типов?var3=Глава 2. Основы языка программирования C++"
+                      >Статическая типизация и преобразования типов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.5?var2=Константы?var3=Глава 2. Основы языка программирования C++"
+                      >Константы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.6?var2=Арифметические операции?var3=Глава 2. Основы языка программирования C++"
+                      >Арифметические операции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.7?var2=Условные выражения?var3=Глава 2. Основы языка программирования C++"
+                      >Условные выражения</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.8?var2=Побитовые операции?var3=Глава 2. Основы языка программирования C++"
+                      >Побитовые операции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.9?var2=Операции присваивания?var3=Глава 2. Основы языка программирования C++"
+                      >Операции присваивания</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.10?var2=Ввод и вывод в консоли?var3=Глава 2. Основы языка программирования C++"
+                      >Ввод и вывод в консоли</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.11?var2=Пространства имен и using?var3=Глава 2. Основы языка программирования C++"
+                      >Пространства имен и using</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.12?var2=Условные конструкции?var3=Глава 2. Основы языка программирования C++"
+                      >Условные конструкции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.13?var2=Циклы?var3=Глава 2. Основы языка программирования C++"
+                      >Циклы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.14?var2=Ссылки?var3=Глава 2. Основы языка программирования C++"
+                      >Ссылки</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.15?var2=Массивы?var3=Глава 2. Основы языка программирования C++"
+                      >Массивы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=2.16?var2=Строки?var3=Глава 2. Основы языка программирования C++"
+                      >Строки</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor3" />
+              <label for="acor3">Глава 3. Функции</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.1?var2=Определение и объявление функций?var3=Глава 3. Функции"
+                      >Определение и объявление функций</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.2?var2=Параметры функции?var3=Глава 3. Функции"
+                      >Параметры функции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.3?var2=Передача аргументов по значению и по ссылке?var3=Глава 3. Функции"
+                      >Передача аргументов по значению и по ссылке</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.4?var2=Константные параметры?var3=Глава 3. Функции"
+                      >Константные параметры</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.5?var2=Оператор return и возвращение результата?var3=Глава 3. Функции"
+                      >Оператор return и возвращение результата</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.6?var2=Рекурсивные функции?var3=Глава 3. Функции"
+                      >Рекурсивные функции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.7?var2=Область видимости объектов?var3=Глава 3. Функции"
+                      >Область видимости объектов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.8?var2=Разделение программы на файлы?var3=Глава 3. Функции"
+                      >Разделение программы на файлы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=3.9?var2=Внешние объекты?var3=Глава 3. Функции"
+                      >Внешние объекты</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor4" />
+              <label for="acor4">Глава 4. Указатели</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.1?var2=Что такое указатели?var3=Глава 4. Указатели"
+                      >Что такое указатели</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.2?var2=Операции с указателями?var3=Глава 4. Указатели"
+                      >Операции с указателями</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.3?var2=Арифметика указателей?var3=Глава 4. Указатели"
+                      >Арифметика указателей</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.4?var2=Константы и указатели?var3=Глава 4. Указатели"
+                      >Константы и указатели</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.5?var2=Указатели и массивы?var3=Глава 4. Указатели"
+                      >Указатели и массивы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.6?var2=Указатели в параметрах функции?var3=Глава 4. Указатели"
+                      >Указатели в параметрах функции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.7?var2=Массивы в параметрах функции?var3=Глава 4. Указатели"
+                      >Массивы в параметрах функции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.8?var2=Указатели на функции?var3=Глава 4. Указатели"
+                      >Указатели на функции</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.9?var2=Указатели на функции как параметры?var3=Глава 4. Указатели"
+                      >Указатели на функции как параметры</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.10?var2=Указатель на функцию как возвращаемое значение?var3=Глава 4. Указатели"
+                      >Указатель на функцию как возвращаемое значение</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.11?var2=Динамические объекты?var3=Глава 4. Указатели"
+                      >Динамические объекты</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=4.12?var2=Динамические массивы?var3=Глава 4. Указатели"
+                      >Динамические массивы</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor5" />
+              <label for="acor5"
+                >Глава 5. Объектно-ориентированное программирование</label
+              >
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.1?var2=Определение классов?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Определение классов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.2?var2=Конструкторы и инициализация объектов?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Конструкторы и инициализация объектов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.3?var2=Объявление и определение функций класса?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Объявление и определение функций класса</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.4?var2=Управление доступом. Инкапсуляция?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Управление доступом. Инкапсуляция</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.5?var2=Дружественные функции и классы?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Дружественные функции и классы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.6?var2=Ключевое слово this?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Ключевое слово this</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.7?var2=Статические члены класса?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Статические члены класса</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.8?var2=Структуры?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Структуры</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.9?var2=Перечисления?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Перечисления</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.10?var2=Наследование?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Наследование</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.11?var2=Виртуальные функции и их переопределение?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Виртуальные функции и их переопределение</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.12?var2=Абстрактные классы?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Абстрактные классы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.13?var2=Деструктор?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Деструктор</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.14?var2=Перегрузка операторов?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Перегрузка операторов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=5.15?var2=Операторы преобразования типов?var3=Глава 5. Объектно-ориентированное программирование"
+                      >Операторы преобразования типов</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor6" />
+              <label for="acor6">Глава 6. Исключения</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=6.1?var2=Обработка исключений?var3=Глава 6. Исключения"
+                      >Обработка исключений</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=6.2?var2=Тип exception?var3=Глава 6. Исключения"
+                      >Тип exception</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=6.3?var2=Типы исключений?var3=Глава 6. Исключения"
+                      >Типы исключений</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor7" />
+              <label for="acor7">Глава 7. Последовательные контейнеры</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.1?var2=Типы последовательных контейнеров?var3=Глава 7. Последовательные контейнеры"
+                      >Типы последовательных контейнеров</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.2?var2=Вектор?var3=Глава 7. Последовательные контейнеры"
+                      >Вектор</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.3?var2=Итераторы?var3=Глава 7. Последовательные контейнеры"
+                      >Итераторы</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.4?var2=Операции с векторами?var3=Глава 7. Последовательные контейнеры"
+                      >Операции с векторами</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.5?var2=Array?var3=Глава 7. Последовательные контейнеры"
+                      >Array</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.6?var2=List?var3=Глава 7. Последовательные контейнеры"
+                      >List</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.7?var2=Forward_list?var3=Глава 7. Последовательные контейнеры"
+                      >Forward_list</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=7.8?var2=Deque?var3=Глава 7. Последовательные контейнеры"
+                      >Deque</a
+                    >
+                  </li>
+                </ol>
+              </div>
+
+              <input type="radio" name="acor" id="acor8" />
+              <label for="acor8">Глава 8. Потоки и система ввода-вывода</label>
+              <div class="acor-body">
+                <ol class="rounded">
+                  <li>
+                    <a
+                      href="lecture.html?var1=8.1?var2=Базовые типы для работы с потоками?var3=Глава 8. Потоки и система ввода-вывода"
+                      >Базовые типы для работы с потоками</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=8.2?var2=Файловые потоки. Открытие и закрытие?var3=Глава 8. Потоки и система ввода-вывода"
+                      >Файловые потоки. Открытие и закрытие</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=8.3?var2=Чтение и запись текстовых файлов?var3=Глава 8. Потоки и система ввода-вывода"
+                      >Чтение и запись текстовых файлов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="lecture.html?var1=8.4?var2=Переопределение операторов ввода и вывода?var3=Глава 8. Потоки и система ввода-вывода"
+                      >Переопределение операторов ввода и вывода</a
+                    >
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END .gtco-services -->
+
+      <footer id="gtco-footer" class="gtco-section" role="contentinfo">
+        <div class="gtco-container">
+          <div class="row row-pb-md">
+            <div class="col-md-4 gtco-widget gtco-footer-paragraph">
+              <h3>С++</h3>
+              <p>
+                Уроки рассчитаны, в первую очередь на новичков, но будут полезны
+                и тем, кто уже имеет небольшой опыт в программировании. Мы
+                начнем с основных принципов и закончим данный курс уже на более
+                сложных примерах.
+              </p>
+            </div>
+            <div class="col-md-6 gtco-footer-link">
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="gtco-list-link">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О Разработчике</a></li>
+                    <li><a href="lectures.html">Лекции</a></li>
+                    <li><a href="tests.html">Тесты</a></li>
+                    <li><a href="labs.html">Лабораторные работы</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <a
+                      style="font-family: Montserrat"
+                      href="https://api.whatsapp.com/send?phone=77055561442&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C"
+                      >+7 700 682 71 88</a
+                    >
+                    <br />
+                    <a style="font-family: Montserrat">Бақтияров Әлқайдар</a>
+                    <br />
+                    <a style="font-family: Montserrat">18-ВТ-1</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script></script>
+
+    <div class="gototop js-top">
+      <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+    <!--Подключение JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

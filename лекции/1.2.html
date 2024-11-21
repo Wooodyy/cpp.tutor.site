@@ -1,0 +1,297 @@
+<style>
+    P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<h1>Первая программа в Visual Studio</h1>
+                <p>
+                  Для создания программы на C++ нам нужны, как минимум, две
+                  вещи: текстовый редактор для набора кода и компилятор для
+                  превращения этого кода в приложение. При этом для компиляции
+                  необходимо запускать консоль или терминал. Однако есть и более
+                  удобный способ - использование различных сред разработки или
+                  IDE. Они, как правило, содержит встроенный текстовый редактор,
+                  компилятор и позволяют скомпилировать и запустить программу по
+                  одному клику мыши, а также имеют еще множество разных
+                  вспомогательных возможностей.
+                </p>
+                <p>
+                  Для программирования под Windows наиболее популярной средой
+                  разработки, если говорить о C++, является Visual Studio.
+                  Данную среду можно найти по ссылке
+                  <a href="https://www.visualstudio.com/ru/vs/" rel="nofollow"
+                    >https://www.visualstudio.com/ru/vs/</a
+                  >. Она доступна в ряде редакций. В частности, можно
+                  использовать бесплатную и полнофункциональную версию Visual
+                  Studio 2017 Community.
+                </p>
+                <p>
+                  После загрузки и запуска установщика Visual Studio в нем
+                  необходимо отметить пункт "Разработка классических приложений
+                  на C++":
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs1.png"
+                  alt="Установка С++ в Visual Studio 2017"
+                />
+                <p>
+                  Выбрав все необходимые пункты, нажмем ОК для запуска
+                  установки. После установки Visual Studio создадим первый
+                  проект. Для этого перейдем в меню
+                  <strong
+                    >File (Файл) -&gt; New (Создать) -&gt; Project...
+                    (Проект)</strong
+                  >, и нам откроется окно создания нового проекта. В нем
+                  перейдем в левой части окна к языку С++ и выберем его
+                  подсекцию <strong>General</strong>:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs2.png"
+                  alt="Первый проект на Си в Visual Studio"
+                />
+                <p>
+                  В центральной части окна в качестве типа проекта выберем
+                  <strong>Empty Project</strong>, а внизу окна в поле для
+                  имени проекта дадим проекту имя HelloApp и нажмем на ОК для
+                  создания проекта.
+                </p>
+                <p>
+                  После этого Visual Studio создаст пустой проект. Добавим в
+                  него текстовый файл для набора исходного кода. Для этого в
+                  окне Solution Explorer (Обозреватель решений) нажмем правой
+                  кнопкой мыши на узел <strong>Source Files</strong> и в
+                  контекстом меню выберем
+                  <strong>Add -&gt; New Item...</strong>:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs5.png"
+                  alt="Добавление файла на С++ в Visual Studio 2017"
+                />
+                <p>Затем нам откроется окно для добавления нового элемента:</p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs6.png"
+                  alt="Добавление исходного файла на C++ в Visual Studio 2017"
+                />
+                <p>
+                  Здесь нам надо выбрать пункт
+                  <strong>C++ File(.cpp)</strong>, а внизу окна укажем для
+                  файла имя <strong>Hello.cpp</strong>. Как правило,
+                  исходные файлы на C++ имеют расширение
+                  <strong>.сpp</strong>.
+                </p>
+                <p>
+                  После добавления файла изменим опции проекта. Для этого
+                  перейдем к пункту меню
+                  <strong>Project -&gt; Properties</strong>:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs3.png"
+                  alt="Свойства проекта С++ в Visual Studio"
+                />
+                <p>
+                  И в открывшемся окне свойств проекта в левой части перейдем к
+                  секции <strong>Linker -&gt;System</strong> и далее для
+                  поля <strong>SubSystem</strong> установим значение
+                  <strong>Console(/SUBSYSTEM:CONSOLE)</strong>, выбрав
+                  нужный элемент в списке:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs4.png"
+                  alt="Closing console C++ in Visual Studio"
+                />
+                <p>
+                  Тем самым мы указываем, что мы хотим создать консольное
+                  приложение. После установки этого значения нажмем на кнопку
+                  "Применить", чтобы новые настройки конфигурации вступили в
+                  силу.
+                </p>
+                <p>
+                  После добавления файла проект будет иметь следующую структуру:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs7.png"
+                  alt="Структура проекта на C++ в Visual Studio 2017"
+                />
+                <p>
+                  Вкратце пробежимся по этой структуре. Окно Solution Explorer
+                  содержит в решение. В данном случае оно называется HelloApp.
+                  Решение может содержать несколько проектов. По умолчанию у нас
+                  один проект, который имеет то же имя - HelloApp. В проекте
+                  есть ряд узлов:
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <strong>External Dependencies</strong>: отображает
+                      файлы, которые используются в файлах исходного кода, но не
+                      являются частью проекта
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>Header Files</strong>: предназначена для
+                      хранения заголовочных файлов с расширением .h
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>Resource Files</strong>: предназначена для
+                      хранения файлов ресурсов, например, изображений
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>Source Files</strong>: хранит файлы с
+                      исходным кодом
+                    </p>
+                  </li>
+                </ul>
+                <p>
+                  Теперь собственно создадим первую программу и определим в
+                  файле Hello.cpp простейший код, который будет выводить строку
+                  на консоль:
+                </p>
+                <div id="highlighter_473840" class="syntaxhighlighter  c"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c preprocessor">#include &lt;iostream&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // подключаем заголовочный файл iostream</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="c color1 bold">int</code> <code class="c plain">main()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="c comments">// определяем функцию main</code></div><div class="line number4 index3 alt1"><code class="c plain">{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="c comments">// начало функции</code></div><div class="line number5 index4 alt2"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c plain">std::cout &lt;&lt; </code><code class="c string">"Hello World!"</code><code class="c plain">;&nbsp; </code><code class="c comments">// выводим строку на консоль</code></div><div class="line number6 index5 alt1"><code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c keyword bold">return</code> <code class="c plain">0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="c comments">// выходим из функции</code></div><div class="line number7 index6 alt2"><code class="c plain">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></div></div></td></tr></tbody></table></div>
+                <p>
+                  Здесь использован весь тот код, который был рассмотрен в
+                  предыдущих темах про компиляцию с помощью g++.
+                </p>
+                <p>
+                  Теперь запустим программу. Для этого в Visual Studio нажмем на
+                  сочетание клавиш Ctrl+F5 или выберем пункт меню
+                  <strong>Debug -&gt; Start Without Debugging</strong>:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs8.png"
+                  alt="Запуск программы на C++ в Visual Studio"
+                />
+                <p>
+                  И в итоге Visual Studio передаст исходный код компилятору,
+                  который скомпилирует из кода исполняемый файл exe, который
+                  потом будет запущен на выполнение. И мы увидим на запущенной
+                  консоли наше сообщение:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs10.png"
+                  alt="Первое приложение на языке программирования C++"
+                />
+                <p>
+                  После этого на жестком диске в проекте в папке Debug можно
+                  увидеть скомпилированный файл exe, который мы можем запускать
+                  независимо от Visual Studio:
+                </p>
+                <img
+                style="width: 50%;"
+                  src="https://metanit.com/cpp/tutorial/pics/vs11.png"
+                  alt="Компиляция кода на языке программирования C++"
+                />
+                <p>
+                  В данном случае файл <strong>HelloApp.exe</strong> как
+                  раз и представляет скомпилированный исполняемый файл. И, кроме
+                  того, в той же папке автоматически генерируются два
+                  вспомогательных файла:
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <strong>HelloApp.ilk</strong>: файл "incremental
+                      linker", который используется компоновщиком для ускорения
+                      компоновки
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <strong>HelloApp.pdb</strong>: файл, который
+                      содержит отладочную информацию
+                    </p>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>

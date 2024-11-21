@@ -1,0 +1,989 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Арифметика указателей</h2>
+
+  <p>
+    Указатели могут участвовать в арифметических операциях (сложение, вычитание,
+    инкремент, декремент). Однако сами операции производятся немного иначе, чем
+    с числами. И многое здесь зависит от типа указателя.
+  </p>
+  <p>
+    К указателю можно прибавлять целое число, и также можно вычитать из
+    указателя целое число. Кроме того, можно вычитать из одного указателя другой
+    указатель.
+  </p>
+  <p>
+    Рассмотрим вначале операции инкремента и декремента и для этого возьмем
+    указатель на объект типа <span class="b">int</span>:
+  </p>
+  <div>
+    <div id="highlighter_804443" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = 10;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*ptr = &amp;n;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"address="</code>
+                  <code class="cpp plain">&lt;&lt; ptr &lt;&lt; </code
+                  ><code class="cpp string">"\tvalue="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *ptr &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">ptr++;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"address="</code>
+                  <code class="cpp plain">&lt;&lt; ptr &lt;&lt; </code
+                  ><code class="cpp string">"\tvalue="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *ptr &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">ptr--;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"address="</code>
+                  <code class="cpp plain">&lt;&lt; ptr &lt;&lt; </code
+                  ><code class="cpp string">"\tvalue="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *ptr &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">&nbsp;</div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Операция инкремента ++ увеличивает значение на единицу. В случае с
+    указателем увеличение на единицу будет означать увеличение адреса, который
+    хранится в указателе, на размер типа указателя. То есть в данном случае
+    указатель на тип int, а размер объектов int в большинстве архитектур равен 4
+    байтам. Поэтому увеличение указателя типа int на единицу означает увеличение
+    значение указателя на 4.
+  </p>
+  <p>И в моем случае консольный вывод выглядит следующим образом:</p>
+  <div class="console">
+    <pre class="consoletext">
+address=0x60fe98	value=10
+address=0x60fe9c	value=6356636
+address=0x60fe98	value=10
+</pre
+    >
+  </div>
+  <p>
+    Здесь видно, что после инкремента значение указателя увеличилось на 4: с
+    0x60fe98 до 0x60fe9c. А после декремента, то есть уменьшения на единицу,
+    указатель получил предыдущий адрес в памяти.
+  </p>
+  <p>
+    Фактически увеличение на единицу означает, что мы хотим перейти к следующему
+    объекту в памяти, который находится за текущим и на который указывает
+    указатель. А уменьшение на единицу означает переход назад к предыдущему
+    объекту в памяти.
+  </p>
+  <p>
+    После изменения адреса мы можем получить значение, которое находится по
+    новому адресу, однако это значение может быть неопределенным, как показано в
+    случае выше.
+  </p>
+  <p>
+    В случае с указателем типа <span class="b">int</span> увеличение/уменьшение
+    на единицу означает изменение адреса на 4. Аналогично, для указателя типа
+    <span class="b">short</span> эти операции изменяли бы адрес на 2, а для
+    указателя типа <span class="b">char</span> на 1.
+  </p>
+  <div>
+    <div id="highlighter_808199" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">d = 10.6;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">*pd = &amp;d;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pd: address:"</code>
+                  <code class="cpp plain">&lt;&lt; pd &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">pd++;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pd: address:"</code>
+                  <code class="cpp plain">&lt;&lt; pd &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">c = </code
+                  ><code class="cpp string">'N'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">*pc = &amp;c;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pc: address:"</code>
+                  <code class="cpp plain">&lt;&lt; (</code
+                  ><code class="cpp keyword bold">void</code
+                  ><code class="cpp plain">*)pc &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">pc++;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pc: address:"</code>
+                  <code class="cpp plain">&lt;&lt; (</code
+                  ><code class="cpp keyword bold">void</code
+                  ><code class="cpp plain">*)pc &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number16 index15 alt1">&nbsp;</div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>В моем случае консольный вывод будет выглядеть следующим образом:</p>
+  <div class="console">
+    <pre class="consoletext">
+Pointer pd: address=0x60fe90
+Pointer pd: address=0x60fe98
+Pointer pc: address=0x60fe8f
+Pointer pc: address=0x60fe90
+</pre
+    >
+  </div>
+  <p>
+    Как видно из консольного вывода, увеличение на единицу указателя типа double
+    дало увеличения хранимого в нем адреса на 8 единиц (размер объекта double -
+    8 байт), а увеличение на единицу указателя типа char дало увеличение
+    хранимого в нем адреса на 1 (размер типа char - 1 байт).
+  </p>
+  <p>
+    Аналогично указатель будет изменяться при прибавлении/вычитании не единицы,
+    а какого-то другого числа.
+  </p>
+  <div>
+    <div id="highlighter_389942" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">d = 10.6;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">*pd = &amp;d;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pd: address:"</code>
+                  <code class="cpp plain">&lt;&lt; pd &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">pd = pd + 2;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pd: address:"</code>
+                  <code class="cpp plain">&lt;&lt; pd &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">c = </code
+                  ><code class="cpp string">'N'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">*pc = &amp;c;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pc: address:"</code>
+                  <code class="cpp plain">&lt;&lt; (</code
+                  ><code class="cpp keyword bold">void</code
+                  ><code class="cpp plain">*)pc &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">pc = pc - 3;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Pointer pc: address:"</code>
+                  <code class="cpp plain">&lt;&lt; (</code
+                  ><code class="cpp keyword bold">void</code
+                  ><code class="cpp plain">*)pc &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number16 index15 alt1">&nbsp;</div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Добавление к указателю типа <span class="b">double</span> числа 2</p>
+  <div>
+    <div id="highlighter_96337" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">pd = pd + 2;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    означает, что мы хотим перейти на два объекта double вперед, что
+    подразумевает изменение адреса на 2 * 8 = 16 байт.
+  </p>
+  <p>Вычитание из указателя типа <span class="b">char</span> числа 3</p>
+  <div>
+    <div id="highlighter_559171" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">pc = pc - 3;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    означает, что мы хотим перейти на три объекта char назад, что подразумевает
+    изменение адреса на 3 * 1 = 3 байта.
+  </p>
+  <p>И в моем случае я получу следующий консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Pointer pd: address=0x60fe90
+Pointer pd: address=0x60fea0
+Pointer pc: address=0x60fe8f
+Pointer pc: address=0x60fe8c
+</pre
+    >
+  </div>
+  <p>
+    В отличие от сложения операция вычитания может применять не только к
+    указателю и целому числу, но и к двум указателям одного типа:
+  </p>
+  <div>
+    <div id="highlighter_622787" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 10;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = 23;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*pa = &amp;a;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*pb = &amp;b;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">c = pa - pb;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"pa: "</code>
+                  <code class="cpp plain">&lt;&lt; pa &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"pb: "</code>
+                  <code class="cpp plain">&lt;&lt; pb &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"c: "</code>
+                  <code class="cpp plain">&lt;&lt; c &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">&nbsp;</div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод в моем случае:</p>
+  <div class="console">
+    <pre class="consoletext">
+pa: 0x60fe90
+pb: 0x60fe8c
+c: 1
+</pre
+    >
+  </div>
+  <p>
+    Результатом разности двух указателей является "расстояние" между ними.
+    Например, в случае выше адрес из первого указателя на 4 больше, чем адрес из
+    второго указателя (0x60fe8c + 4 = 0x60fe90). Так как размер
+    <span class="b">одного</span> объекта int равен 4 байтам, то расстояние
+    между указателями будет равно (0x60fe90 - 0x60fe8c)/4 = 1.
+  </p>
+  <h3>Некоторые особенности операций</h3>
+  <p>
+    При работе с указателями надо отличать операции с самим указателем и
+    операции со значением по адресу, на который указывает указатель.
+  </p>
+  <div>
+    <div id="highlighter_552318" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*pa = &amp;a;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = *pa + 20;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// операция со значением, на который указывает
+                    указатель</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >pa++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// операция с самим указателем</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"b: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; b &lt;&lt; std::endl;&nbsp; ;&nbsp; </code
+                  ><code class="cpp comments">// 30</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть в данном случае через операцию разыменования
+    <code>*pa</code> получаем значение, на которое указывает указатель pa, то
+    есть число 10, и выполняем операцию сложения. То есть в данном случае
+    обычная операция сложения между двумя числами, так как выражение
+    <code>*pa</code> представляет число.
+  </p>
+  <p>
+    Но в то же время есть особенности, в частности, с операциями инкремента и
+    декремента. Дело в том, что операции <span class="b">*</span>,
+    <span class="b">++</span> и <span class="b">--</span> имеют одинаковый
+    приоритет и при размещении рядом выполняются справа налево.
+  </p>
+  <p>Например, выполним постфиксный инкремент:</p>
+  <div>
+    <div id="highlighter_377250" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">*pa = &amp;a;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"pa: address="</code>
+                  <code class="cpp plain">&lt;&lt; pa &lt;&lt; </code
+                  ><code class="cpp string">"\tvalue="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *pa &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >b = *pa++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// инкремент адреса указателя</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"b: value="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"pa: address="</code>
+                  <code class="cpp plain">&lt;&lt; pa &lt;&lt; </code
+                  ><code class="cpp string">"\tvalue="</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; *pa &lt;&lt; std::endl;</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В выражении <code>b = *pa++;</code> сначала к указателю присваивается
+    единица (то есть к адресу добавляется 4, так как указатель типа
+    <span class="b">int</span>). Затем так как инкремент постфиксный, с помощью
+    операции разыменования возвращается значение, которое было до инкремента -
+    то есть число 10. И это число 10 присваивается переменной b. И в моем случае
+    результат работы будет следующий:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+pa: address=0x60fe94	value=10
+b: value=10
+pa: address=0x60fe98	value=6356648
+</pre
+    >
+  </div>
+  <p>Изменим выражение:</p>
+  <div>
+    <div id="highlighter_358688" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">b = (*pa)++;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Скобки изменяют порядок операций. Здесь сначала выполняется операция
+    разыменования и получение значения, затем это значение увеличивается на 1.
+    Теперь по адресу в указателе находится число 11. И затем так как инкремент
+    постфиксный, переменная b получает значение, которое было до инкремента, то
+    есть опять число 10. Таким образом, в отличие от предыдущего случая все
+    операции производятся над значением по адресу, который хранит указатель, но
+    не над самим указателем. И, следовательно, изменится результат работы:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+pa: address=0x60fe94	value=10
+b: value=10
+pa: address=0x60fe94	value=11
+</pre
+    >
+  </div>
+  <p>Аналогично будет с префиксным инкрементом:</p>
+  <div>
+    <div id="highlighter_901024" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">b = ++*pa;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае сначала с помощью операции разыменования получаем значение
+    по адресу из указателя pa, к этому значению прибавляется единица. То есть
+    теперь значение по адресу, который хранится в указателе, равно 11. Затем
+    результат операции присваивается переменной b:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+pa: address=0x60fe94	value=10
+b: value=11
+pa: address=0x60fe94	value=11
+</pre
+    >
+  </div>
+  <p>Изменим выражение:</p>
+  <div>
+    <div id="highlighter_868779" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">b = *++pa;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Теперь сначала изменяет адрес в указателе, затем мы получаем по этому адресу
+    значение и присваиваем его переменной b. Полученное значение в этом случае
+    может быть неопределенным:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+pa: address=0x60fe94	value=10
+b: value=6356864
+pa: address=0x60fe98	value=6356864
+</pre
+    >
+  </div>
+</div>

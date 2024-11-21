@@ -1,0 +1,1398 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Deque</h2>
+
+  <p>
+    <span class="b">Deque</span> представляет двухстороннюю очередь. Для
+    использования данного контейнера нужно подключить заголовочный файл
+    <span class="b">deque</span>.
+  </p>
+  <p>Способы создания двухсторонней очереди:</p>
+  <div>
+    <div id="highlighter_391757" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    deque1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// пустая очередь</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    deque2(5);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque2 состоит из 5 чисел, каждый элемент имеет значение
+                    по умолчанию</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque(5,
+                    2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque3 состоит из 5 чисел, каждое число равно 2</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque4{ 1, 2, 4, 5 };&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque4 состоит из чисел 1, 2, 4, 5</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque5 = { 1, 2, 3, 5 };&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque5 состоит из чисел 1, 2, 3, 5</code
+                  >
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque6({ 1, 2, 3, 4, 5 }); </code
+                  ><code class="cpp comments"
+                    >// deque6&nbsp; состоит из чисел 1, 2, 3, 4, 5</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    deque7(deque4);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque7 - копия очереди deque4</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque8 =
+                    deque7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// deque8 - копия очереди deque7</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Получение элементов очереди</h3>
+  <p>
+    Для получения элементов очереди можно использовать операцию [] и ряд
+    функций:
+  </p>
+  <ul>
+    <li>
+      <p><span class="b">[index]</span>: получение элемента по индексу</p>
+    </li>
+    <li>
+      <p><span class="b">at(index)</span>: возращает элемент по индексу</p>
+    </li>
+    <li>
+      <p><span class="b">front()</span>: возвращает первый элемент</p>
+    </li>
+    <li>
+      <p><span class="b">back()</span>: возвращает последний элемент</p>
+    </li>
+  </ul>
+  <div>
+    <div id="highlighter_91443" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;deque&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">&nbsp;</div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >first = numbers.front();&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 1</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >last = numbers.back();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 5</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >second =
+                    numbers[1];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 2</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >third = numbers.at(2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 3</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; first &lt;&lt; second &lt;&lt; third
+                    &lt;&lt; last &lt;&lt; std::endl; </code
+                  ><code class="cpp comments">// 1235</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Стоит отметить, что если мы будем обращаться с помощью операции
+    индексирования по некорректному индексу, который выходит за границы
+    контейнера, то результат будет неопредленным:
+  </p>
+  <div>
+    <div id="highlighter_986508" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >eighth = numbers[7];&nbsp;&nbsp;&nbsp;
+                  </code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В этом случае использование функции <span class="b">at()</span> является
+    более предпочтительным, так как при обращении по некорректному индексу она
+    генерирует исключение <span class="b">out_of_range</span>:
+  </p>
+  <div>
+    <div id="highlighter_342239" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;deque&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;stdexcept&gt;</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5};</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">try</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = numbers.at(7);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">catch</code>
+                  <code class="cpp plain">(std::out_of_range e)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Incorrect index"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number16 index15 alt1">&nbsp;</div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также в цикле или с помощью итераторов можно перебрать элементы контейнера:
+  </p>
+  <div>
+    <div id="highlighter_658948" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;deque&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">&nbsp;</div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n : numbers)</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; n &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number11 index10 alt2">&nbsp;</div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >i=0; i &lt; numbers.size(); i++)</code
+                  >
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; numbers[i] &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number15 index14 alt2">&nbsp;</div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain"
+                    >(auto iter = numbers.begin(); iter != numbers.end();
+                    iter++)</code
+                  >
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; *iter &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Размер очереди</h3>
+  <p>
+    Чтобы узнать размер очереди, можно использовать функцию
+    <span class="b">size()</span>. А функция
+    <span class="b">empty()</span> позволяет узнать, содержит ли очередь
+    элементы. Она возвращает значение true, если в очереди есть элементы:
+  </p>
+  <div>
+    <div id="highlighter_523919" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(numbers.empty())</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Deque is empty"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">else</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = numbers.size();</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Deque has "</code>
+                  <code class="cpp plain">&lt;&lt; n &lt;&lt; </code
+                  ><code class="cpp string">" elements"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Функция <span class="b">resize()</span> позволяет изменить размер очереди.
+    Эта функция имеет две формы:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">resize(n)</span>: оставляет в очереди n первых
+        элементов. Если deque содержит больше элементов, то размер контейнера
+        усекается до первых n элементов. Если размер очереди меньше n, то
+        добавляются недостающие элементы и инициализируются значением по
+        умолчанию
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">resize(n, value)</span>: также оставляет в очереди n
+        первых элементов. Если размер очереди меньше n, то добавляются
+        недостающие элементы со значением value
+      </p>
+    </li>
+  </ul>
+  <p>Применение функции:</p>
+  <div>
+    <div id="highlighter_277355" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5, 6 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">numbers.resize(4);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// оставляем первые четыре элемента - numbers = {1, 2, 3,
+                    4}</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >numbers.resize(6, 8);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// numbers = {1, 2, 3, 4, 8, 8}</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Важно учитывать, что применение функции resize может сделать некорректными
+    все итераторы, указатели и ссылки на элементы.
+  </p>
+  <h3>Изменение элементов очереди</h3>
+  <p>
+    Функция <span class="b">assign()</span> позволяет заменить все элементы
+    очереди определенным набором. Она имеет следующие формы:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">assign(il)</span>: заменяет содержимое контейнера
+        элементами из списка инициализации il
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">assign(n, value)</span>: заменяет содержимое контейнера
+        n элементами, которые имеют значение value
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">assign(begin, end)</span>: заменяет содержимое
+        контейнера элементами из диапазона, на начало и конец которого указывают
+        итераторы begin и end
+      </p>
+    </li>
+  </ul>
+  <p>Применение функции:</p>
+  <div>
+    <div id="highlighter_284745" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >numbers.assign({ 21, 22, 23, 24, 25 }); </code
+                  ><code class="cpp comments"
+                    >// numbers = { 21, 22, 23, 24, 25 }</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain"
+                    >numbers.assign(4,
+                    3);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// numbers = {3, 3, 3, 3}</code>
+                </div>
+                <div class="line number6 index5 alt1">&nbsp;</div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; values = { 6, 7, 8, 9, 10, 11 };</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain"
+                    >auto start = values.begin() + 2;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на третий элемент</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain"
+                    >auto end =
+                    values.end();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на последний элемент</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain"
+                    >numbers.assign(start,
+                    end);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >//&nbsp; numbers = { 8, 9, 10, 11 }</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Функция <span class="b">swap()</span> обменивает значениями две очереди:
+  </p>
+  <div>
+    <div id="highlighter_343852" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; deque1 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&gt; deque2 = { 6, 7, 8, 9};</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >deque1.swap(deque2);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// deque1 = { 6, 7, 8, 9};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Добавление элементов</h3>
+  <p>Чтобы добавить элементы в очередь deque, можно применять ряд функций:</p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">push_back(val)</span>: добавляет значение val в конец
+        очереди
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">push_front(val)</span>: добавляет значение val в начало
+        очереди
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">emplace_back(val)</span>: добавляет значение val в конец
+        очереди
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">emplace_front(val)</span>: добавляет значение val в
+        начало очереди
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">emplace(pos, val)</span>: вставляет элемент val на
+        позицию, на которую указывает итератор pos. Возвращает итератор на
+        добавленный элемент
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert(pos, val)</span>: вставляет элемент val на
+        позицию, на которую указывает итератор pos, аналогично функции emplace.
+        Возвращает итератор на добавленный элемент
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert(pos, n, val)</span>: вставляет n элементов val
+        начиная с позиции, на которую указывает итератор pos. Возвращает
+        итератор на первый добавленный элемент. Если n = 0, то возвращается
+        итератор pos.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert(pos, begin, end)</span>: вставляет начиная с
+        позиции, на которую указывает итератор pos, элементы из другого
+        контейнера из диапазона между итераторами begin и end. Возвращает
+        итератор на первый добавленный элемент. Если между итераторами begin и
+        end нет элементов, то возвращается итератор pos.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert(pos, values)</span>: вставляет список значений
+        values начиная с позиции, на которую указывает итератор pos. Возвращает
+        итератор на первый добавленный элемент. Если values не содержит
+        элементов, то возвращается итератор pos.
+      </p>
+    </li>
+  </ul>
+  <p>
+    Функции <code>push_back()</code>, <code>push_front()</code>,
+    <code>emplace_back()</code> и <code>emplace_front()</code>:
+  </p>
+  <div>
+    <div id="highlighter_228516" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain"
+                    >numbers.push_back(6);&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// { 1, 2, 3, 4, 5, 6 }</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">numbers.push_front(0);&nbsp; </code
+                  ><code class="cpp comments">// { 0, 1, 2, 3, 4, 5, 6 }</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >numbers.emplace_back(7);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// { 0, 1, 2, 3, 4, 5, 6, 7 }</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain"
+                    >numbers.emplace_front(-1);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// { -1, 0, 1, 2, 3, 4, 5, 6, 7 }</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Добавление в середину списка с помощью функции
+    <span class="b">emplace()</span>:
+  </p>
+  <div>
+    <div id="highlighter_444" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">auto iter = ++numbers.cbegin(); </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на второй элемент</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">numbers.emplace(iter, 8); </code
+                  ><code class="cpp comments"
+                    >// добавляем после первого элемента&nbsp; numbers = { 1, 8,
+                    2, 3, 4, 5};</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Добавление в середину списка с помощью функции
+    <span class="b">insert()</span>:
+  </p>
+  <div>
+    <div id="highlighter_786479" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers1 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">auto iter1 = numbers1.cbegin(); </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на второй элемент</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">numbers1.insert(iter1 + 2, 8); </code
+                  ><code class="cpp comments"
+                    >// добавляем после второго элемента&nbsp;
+                  </code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp comments"
+                    >//numbers1 = { 1, 2, 8, 3, 4, 5};</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers2 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">auto iter2 = numbers2.cbegin(); </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на первый элемент</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">numbers2.insert(iter2, 3, 4); </code
+                  ><code class="cpp comments"
+                    >// добавляем вначало три четверки&nbsp;
+                  </code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp comments"
+                    >//numbers2 = { 4, 4, 4, 1, 2, 3, 4, 5};</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">&nbsp;</div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">std::list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; values = { 10, 20, 30, 40, 50 };</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers3 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">auto iter3 = numbers3.cbegin(); </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на первый элемент</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp comments"
+                    >// добавляем в начало все элементы из values</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain"
+                    >numbers3.insert(iter3, values.begin(), values.end());</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp comments"
+                    >//numbers3 = { 10, 20, 30, 40, 50, 1, 2, 3, 4, 5};</code
+                  >
+                </div>
+                <div class="line number17 index16 alt2">&nbsp;</div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers4 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain"
+                    >auto iter4 = numbers4.cend();&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на позицию за последним
+                    элементом</code
+                  >
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp comments"
+                    >// добавляем после последнего элемента список { 21, 22, 23
+                    }</code
+                  >
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain"
+                    >numbers4.insert(iter4, { 21, 22, 23 });</code
+                  >
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp comments"
+                    >//numbers4 = { 1, 2, 3, 4, 5, 21, 22, 23};</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    При добавлении в контейнер deque следует учитывать, что добавление может
+    сделать недействительными все итераторы, указатели и ссылки на элементы
+    контейнера.
+  </p>
+  <h3>Удаление элементов</h3>
+  <p>
+    Для удаления элементов из контейнера deque используются следующие функции:
+  </p>
+  <ul>
+    <li>
+      <p><span class="b">clear(p)</span>: удаляет все элементы</p>
+    </li>
+    <li>
+      <p><span class="b">pop_back()</span>: удаляет последний элемент</p>
+    </li>
+    <li>
+      <p><span class="b">pop_front()</span>: удаляет первый элемент</p>
+    </li>
+    <li>
+      <p>
+        <span class="b">erase(p)</span>: удаляет элемент, на который указывает
+        итератор p. Возвращает итератор на элемент, следующий после удаленного,
+        или на конец контейнера, если удален последний элемент
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">erase(begin, end)</span>: удаляет элементы из диапазона,
+        на начало и конец которого указывают итераторы begin и end. Возвращает
+        итератор на элемент, следующий после последнего удаленного, или на конец
+        контейнера, если удален последний элемент
+      </p>
+    </li>
+  </ul>
+  <p>Применение функций:</p>
+  <div>
+    <div id="highlighter_794988" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::deque&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain"
+                    >numbers.pop_front();&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// numbers = { 2, 3, 4, 5 }</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >numbers.pop_back();&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// numbers = { 2, 3, 4 }</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >numbers.clear();&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// numbers ={}</code>
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">numbers = { 1, 2, 3, 4, 5 };</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">auto iter = numbers.cbegin(); </code
+                  ><code class="cpp comments"
+                    >// указатель на первый элемент</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain"
+                    >numbers.erase(iter);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// удаляем первый элемент</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp comments">// numbers = { 2, 4, 5, 6 }</code>
+                </div>
+                <div class="line number10 index9 alt1">&nbsp;</div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">numbers = { 1, 2, 3, 4, 5 };</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">auto begin = numbers.begin(); </code
+                  ><code class="cpp comments"
+                    >// указатель на первый элемент</code
+                  >
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain"
+                    >auto end =
+                    numbers.end();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// указатель на последний элемент</code
+                  >
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain"
+                    >numbers.erase(++begin, --end);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// удаляем со второго элемента до последнего</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp comments">//numbers = {1, 5}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    При удалении стоит учитывать, что удаление элементов из любой позиции (за
+    исключением удаления первого и последнего элементов) делает все итераторы,
+    указатели и ссылки на элементы deque недействительными.
+  </p>
+</div>

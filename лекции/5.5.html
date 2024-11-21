@@ -1,0 +1,1126 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Дружественные функции и классы</h2>
+
+  <p>
+    Дружественные функции - это функции, которые не являются членами класса,
+    однако имеют доступ к его закрытым членам - переменным и функциям, которые
+    имеют спецификатор private.
+  </p>
+  <p>
+    Для определения дружественных функций используется ключевое слово
+    <span class="b">friend</span>. Например, определим следующую программу:
+  </p>
+  <div>
+    <div id="highlighter_897357" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;string&gt;&nbsp;
+                  </code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Auto</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">drive(Auto &amp;);</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setPrice(Auto &amp;, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto(std::string autoName, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">autoPrice) </code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{ </code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = autoName; </code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">price = autoPrice;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string getName(){ </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">name; }</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">getPrice() { </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">price; }</code>
+                </div>
+                <div class="line number16 index15 alt1">&nbsp;</div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// название автомобиля</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price;&nbsp; </code
+                  ><code class="cpp comments">// цена автомобиля</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number21 index20 alt2">&nbsp;</div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">drive(Auto &amp;a) </code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp plain">{ </code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; a.name &lt;&lt; </code
+                  ><code class="cpp string">" is driven"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price)</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(price &gt; 0) </code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a.price = price;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number31 index30 alt2">&nbsp;</div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto tesla(</code
+                  ><code class="cpp string">"Tesla"</code
+                  ><code class="cpp plain">, 5000);</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">drive(tesla);</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; tesla.getName() &lt;&lt; </code
+                  ><code class="cpp string">" : "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tesla.getPrice() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">setPrice(tesla, 8000);</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; tesla.getName() &lt;&lt; </code
+                  ><code class="cpp string">" : "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tesla.getPrice() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number39 index38 alt2">&nbsp;</div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь определен класс Auto, который представляет автомобиль. У этого класса
+    определены приватные закрытые переменные name (название автомобиля) и price
+    (цена автомобиля). Также в классе объявлены две дружественные функции: drive
+    (функция вождения автомобиля) и setPrice (функция назначения цены). Обе этих
+    функции принимают в качестве параметра ссылку на объект Auto.
+  </p>
+  <p>
+    Когда мы объявляем дружественные функции, то фактически мы говорим
+    компилятору, что это друзья класса и они имеют доступ ко всем членам этого
+    класса, в том числе закрытым.
+  </p>
+  <p>
+    При этом для дружественных функций не важно, определяются они под
+    спецификатором public или private. Для них это не имеет значения.
+  </p>
+  <p>
+    Определение этих функций производится вне класса. И поскольку эти функции
+    являются дружественными, то внутри этих функций мы можем через переданную
+    ссылку Auto обратиться ко всем его закрытым переменным.
+  </p>
+  <p>Консольный вывод программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+Tesla is driven
+Tesla : 5000
+Tesla : 8000
+</pre
+    >
+  </div>
+  <h3>Определение дружественных функций в классе</h3>
+  <p>
+    Дружественные функции могут определяться в другом классе. Например,
+    определим класс Person, который использует объект Auto:
+  </p>
+  <div>
+    <div id="highlighter_474079" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+              <div class="line number42 index41 alt1">42</div>
+              <div class="line number43 index42 alt2">43</div>
+              <div class="line number44 index43 alt1">44</div>
+              <div class="line number45 index44 alt2">45</div>
+              <div class="line number46 index45 alt1">46</div>
+              <div class="line number47 index46 alt2">47</div>
+              <div class="line number48 index47 alt1">48</div>
+              <div class="line number49 index48 alt2">49</div>
+              <div class="line number50 index49 alt1">50</div>
+              <div class="line number51 index50 alt2">51</div>
+              <div class="line number52 index51 alt1">52</div>
+              <div class="line number53 index52 alt2">53</div>
+              <div class="line number54 index53 alt1">54</div>
+              <div class="line number55 index54 alt2">55</div>
+              <div class="line number56 index55 alt1">56</div>
+              <div class="line number57 index56 alt2">57</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt; </code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Auto;</code>
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n)</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">drive(Auto &amp;a);</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+                <div class="line number15 index14 alt2">&nbsp;</div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number19 index18 alt2">&nbsp;</div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Auto</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::drive(Auto &amp;);</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::setPrice(Auto &amp;, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto(std::string autoName, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">autoPrice)</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = autoName;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">price = autoPrice;</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string getName() { </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">name; }</code>
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">getPrice() { </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">price; }</code>
+                </div>
+                <div class="line number32 index31 alt1">&nbsp;</div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// название автомобиля</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price;&nbsp; </code
+                  ><code class="cpp comments">// цена автомобиля</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number37 index36 alt2">&nbsp;</div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::drive(Auto &amp;a)</code>
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">" drives "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; a.name &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number42 index41 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price)</code>
+                </div>
+                <div class="line number43 index42 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number44 index43 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(price &gt; 0)</code>
+                </div>
+                <div class="line number45 index44 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a.price = price;</code>
+                </div>
+                <div class="line number46 index45 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number47 index46 alt2">&nbsp;</div>
+                <div class="line number48 index47 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number49 index48 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number50 index49 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto tesla(</code
+                  ><code class="cpp string">"Tesla"</code
+                  ><code class="cpp plain">, 5000);</code>
+                </div>
+                <div class="line number51 index50 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number52 index51 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.drive(tesla);</code>
+                </div>
+                <div class="line number53 index52 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.setPrice(tesla, 8000);</code>
+                </div>
+                <div class="line number54 index53 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; tesla.getName() &lt;&lt; </code
+                  ><code class="cpp string">" : "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tesla.getPrice() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number55 index54 alt2">&nbsp;</div>
+                <div class="line number56 index55 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number57 index56 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Вначале определен класс Person, который представляет человека. Однако
+    поскольку класс Person использует класс Auto, то перед классом Person идет
+    объявление класса Auto.
+  </p>
+  <p>Две функции из класса Person принимают ссылку на объект Auto:</p>
+  <div>
+    <div id="highlighter_737257" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">drive(Auto &amp;a);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть фигурально говоря, человек водит автомобиль и назначает ему цену с
+    помощью этих функциий.
+  </p>
+  <p>Класс Auto определяет дружественные функции с той же сигнатурой:</p>
+  <div>
+    <div id="highlighter_673491" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::drive(Auto &amp;);</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::setPrice(Auto &amp;, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Причем поскольку данные функции будут определены в классе Person, то
+    названия этих функций предваряется префиксом "Person::".
+  </p>
+  <p>
+    И поскольку в этих функциях предполагается использовать объект Auto, то ко
+    времени определения этих функций все члены объекта Auto должны быть
+    известны, поэтому определения функций находятся не в самом классе Person, а
+    после класса Auto. И так как эти функции определены в классе Auto как
+    дружественные, мы можем обратиться в этих функциях к закрытым членам класса
+    Auto.
+  </p>
+  <p>Консольный вывод программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+Tom drives Tesla
+Tesla : 8000
+</pre
+    >
+  </div>
+  <h3>Дружественные классы</h3>
+  <p>
+    В случае выше класс Person использует только две функции из класса Auto. Но
+    допустим впоследствии возникла необходимость добавить в класс Auto еще ряд
+    дружественных функций, которые будут определены в классе Person. Либо мы
+    можем предполагать, что класс Person будет активно использовать объекты
+    Auto. И в этом случае целесообразно определять не отдельные дружественные
+    функции, а определить дружественным весь класс Person:
+  </p>
+  <div>
+    <div id="highlighter_434513" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+              <div class="line number42 index41 alt1">42</div>
+              <div class="line number43 index42 alt2">43</div>
+              <div class="line number44 index43 alt1">44</div>
+              <div class="line number45 index44 alt2">45</div>
+              <div class="line number46 index45 alt1">46</div>
+              <div class="line number47 index46 alt2">47</div>
+              <div class="line number48 index47 alt1">48</div>
+              <div class="line number49 index48 alt2">49</div>
+              <div class="line number50 index49 alt1">50</div>
+              <div class="line number51 index50 alt2">51</div>
+              <div class="line number52 index51 alt1">52</div>
+              <div class="line number53 index52 alt2">53</div>
+              <div class="line number54 index53 alt1">54</div>
+              <div class="line number55 index54 alt2">55</div>
+              <div class="line number56 index55 alt1">56</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt; </code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Auto;</code>
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n)</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">drive(Auto &amp;a);</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price);</code>
+                </div>
+                <div class="line number15 index14 alt2">&nbsp;</div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number19 index18 alt2">&nbsp;</div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Auto</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto(std::string autoName, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">autoPrice)</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = autoName;</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">price = autoPrice;</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string getName() { </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">name; }</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">getPrice() { </code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">price; }</code>
+                </div>
+                <div class="line number31 index30 alt2">&nbsp;</div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// название автомобиля</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price;&nbsp; </code
+                  ><code class="cpp comments">// цена автомобиля</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number36 index35 alt1">&nbsp;</div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::drive(Auto &amp;a)</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">" drives "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; a.name &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">Person::setPrice(Auto &amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">price)</code>
+                </div>
+                <div class="line number42 index41 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number43 index42 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(price &gt; 0)</code>
+                </div>
+                <div class="line number44 index43 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a.price = price;</code>
+                </div>
+                <div class="line number45 index44 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number46 index45 alt1">&nbsp;</div>
+                <div class="line number47 index46 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number48 index47 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number49 index48 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Auto tesla(</code
+                  ><code class="cpp string">"Tesla"</code
+                  ><code class="cpp plain">, 5000);</code>
+                </div>
+                <div class="line number50 index49 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number51 index50 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.drive(tesla);</code>
+                </div>
+                <div class="line number52 index51 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.setPrice(tesla, 8000);</code>
+                </div>
+                <div class="line number53 index52 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; tesla.getName() &lt;&lt; </code
+                  ><code class="cpp string">" : "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tesla.getPrice() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number54 index53 alt1">&nbsp;</div>
+                <div class="line number55 index54 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number56 index55 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Единственно, что в данном случае изменилось по сравнению с предыдущим
+    примером это то, что в классе Auto определение дружественных функций было
+    заменено определением дружественного класса:
+  </p>
+  <div>
+    <div id="highlighter_748906" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">friend</code>
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть тем самым мы опять же говорим, что класс Person - это друг класса
+    Auto, поэтому объекты Person могут обращаться к приватным переменным класса
+    Auto. После этого в классе Person можно обращаться к закрытым членам класса
+    Auto из любых функций.
+  </p>
+</div>

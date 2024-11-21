@@ -1,0 +1,773 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Структуры</h2>
+
+  <p>
+    Ранее для определения классов мы использовали ключевое слово
+    <span class="b">class</span>. Однако C++ предоставляет еще один способ для
+    определения пользовательских типов, который заключается в использовании
+    структур. Данный способ был унаследован языком С++ еще от языка Си.
+  </p>
+  <p>
+    Структура в языке C++ представляет собой производный тип данных, который
+    представляет какую-то определенную сущность, также как и класс. Нередко
+    структуры применителько к С++ также называют классами. И в реальности
+    различия между ними не такие большие.
+  </p>
+  <p>
+    Для определения структуры применяется ключевое слово
+    <span class="b">struct</span>, а сам формат определения выглядит следующим
+    образом:
+  </p>
+  <div>
+    <div id="highlighter_901003" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">struct</code>
+                  <code class="cpp plain">имя_структуры</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">компоненты_структуры</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    <span class="ii">Имя_структуры</span> представляет произвольный
+    идентификатор, к которому применяются те же правила, что и при наименовании
+    переменных.
+  </p>
+  <p>
+    После имени структуры в фигурных скобках помещаются
+    <span class="ii">Компоненты_структуры</span>, которые представляют набор
+    описаний объектов и функций, которые составляют структуру.
+  </p>
+  <p>Например, определим простейшую структуру:</p>
+  <div>
+    <div id="highlighter_143196" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">struct</code>
+                  <code class="cpp plain">person</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number9 index8 alt2">&nbsp;</div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">person tom;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.name = </code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.age = 34;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; tom.name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tom.age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь определена структура <code>person</code>, которая имеет два элемента:
+    <code>age</code> (представляет тип int) и <code>name</code> (представляет
+    тип string).
+  </p>
+  <p>
+    После определения структуры мы можем ее использовать. Для начала мы можем
+    определить объект структуры - по сути обычную переменную, которая будет
+    представлять выше созданный тип. Также после создания переменной структуры
+    можно обращаться к ее элементам - получать их значения или, наоборот,
+    присваивать им новые значения. Для обращения к элементам структуры
+    используется операция "точка":
+  </p>
+  <div>
+    <div id="highlighter_902" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain"
+                    >имя_переменной_структуры.имя_элемента</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    По сути структура похожа на класс, то есть с помощью структур также можно
+    определять сущности для использования в программе. В то же время все члены
+    структуры, для которых не используется спецификатор доступа (public,
+    private), по умолчанию являются открытыми (public). Тогда как в классе все
+    его члены, для которых не указан спецификатор доступа, являются закрытыми
+    (private).
+  </p>
+  <p>
+    Кроме того мы можем инициализировать структуру, присвоив ее переменным
+    значения с помощью синтаксиса инициализации:
+  </p>
+  <div>
+    <div id="highlighter_926817" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">person tom = { 34, </code
+                  ><code class="cpp string">"Tom"</code>
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Инициализация структур аналогична инициализации массивов: в фигурных скобках
+    передаются значения для элементов структуры по порядку. Так как в структуре
+    person первым определено свойство, которое представляет тип int - число, то
+    в фигурных скобках вначале идет число. И так далее для всех элементов
+    структуры по порядку.
+  </p>
+  <p>
+    При этом любой класс мы можем представить в виде структуры и наоборот.
+    Возьмем, к примеру, следующий класс:
+  </p>
+  <div>
+    <div id="highlighter_756444" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n; age = a;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">move()</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">" is moving"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setAge(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain"
+                    >(a &gt; 0 &amp;&amp; a &lt; 100) age = a;</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string getName()</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">name;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">getAge()</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number27 index26 alt2">&nbsp;</div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Данный класс определяет сущность человека и содержит ряд приватных и
+    публичных переменных и функции. Вместо класса для определения той же
+    сущности мы могли бы использовать структуру:
+  </p>
+  <div>
+    <div id="highlighter_526848" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">struct</code>
+                  <code class="cpp plain">user</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">user(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">name = n; age = a;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">move()</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">" is moving"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">setAge(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a)</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain"
+                    >(a &gt; 0 &amp;&amp; a &lt; 100) age = a;</code
+                  >
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string getName()</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">name;</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">getAge()</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp keyword bold">private</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number30 index29 alt1">&nbsp;</div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number32 index31 alt1">&nbsp;</div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">user tom(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">, 22);</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; tom.getName() &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tom.getAge() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.setAge(31);</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; tom.getName() &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; tom.getAge() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    И в плане конечного результата программы мы не увидели бы никакой разницы.
+  </p>
+  <p>
+    Когда использовать структуры? Как правило, структуры используются для
+    описания таких данных, которые имеют только набор публичных атрибутов -
+    открытых переменных. Например, как та же структура person, которая была
+    определена в начале статьи. Иногда подобные сущности еще называют
+    <span class="b">аггрегатными классами</span> (aggregate classes).
+  </p>
+</div>

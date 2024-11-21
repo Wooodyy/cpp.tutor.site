@@ -1,0 +1,787 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Типы данных</h2>
+
+  <p>
+    Каждая переменная имеет определенный тип. И этот тип определяет, какие
+    значения может иметь переменная, какие операции с ней можно производить и
+    сколько байт в памяти она будет занимать. В языке C++ определены следующие
+    базовые типы данных:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">bool</span>: логический тип. Может принимать одну из
+        двух значений <span class="b">true</span> (истина) и
+        <span class="b">false</span> (ложь). Размер занимаемой памяти для этого
+        типа точно не определен.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">char</span>: представляет один символ в кодировке ASCII.
+        Занимает в памяти 1 байт (8 бит). Может хранить любое значение из
+        диапазона от -128 до 127, либо от 0 до 255
+      </p>
+      <p></p>
+    </li>
+    <li>
+      <p>
+        <span class="b">signed char</span>: представляет один символ. Занимает в
+        памяти 1 байт (8 бит). Может хранить любой значение из диапазона от -128
+        до 127
+      </p>
+      <p></p>
+    </li>
+    <li>
+      <p>
+        <span class="b">unsigned char</span>: представляет один символ. Занимает
+        в памяти 1 байт (8 бит). Может хранить любой значение из диапазона от 0
+        до 255
+      </p>
+      <p></p>
+    </li>
+    <li>
+      <p>
+        <span class="b">wchar_t</span>: представляет расширенный символ. На
+        Windows занимает в памяти 2 байта (16 бит), на Linux - 4 байта (32
+        бита). Может хранить любой значение из диапазона от 0 до 65 535 (при 2
+        байтах), либо от 0 до 4 294 967 295 (для 4 байт)
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">char16_t</span>: представляет один символ в кодировке
+        Unicode. Занимает в памяти 2 байта (16 бит). Может хранить любой
+        значение из диапазона от 0 до 65 535
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">char32_t</span>: представляет один символ в кодировке
+        Unicode. Занимает в памяти 4 байта (32 бита). Может хранить любой
+        значение из диапазона от 0 до 4 294 967 295
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">short</span>: представляет целое число в диапазоне от
+        –32768 до 32767. Занимает в памяти 2 байта (16 бит).
+      </p>
+      <p>
+        Данный тип также имеет синонимы <span class="b">short int</span>,
+        <span class="b">signed short int</span>,
+        <span class="b">signed short</span>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">unsigned short</span>: представляет целое число в
+        диапазоне от 0 до 65535. Занимает в памяти 2 байта (16 бит).
+      </p>
+      <p>
+        Данный тип также имеет синоним
+        <span class="b">unsigned short int</span>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">int</span>: представляет целое число. В зависимости от
+        архитектуры процессора может занимать 2 байта (16 бит) или 4 байта (32
+        бита). Диапазон предельных значений соответственно также может
+        варьироваться от –32768 до 32767 (при 2 байтах) или от −2 147 483 648 до
+        2 147 483 647 (при 4 байтах). Но в любом случае размер должен быть
+        больше или равен размеру типа short и меньше или равен размеру типа long
+      </p>
+      <p>
+        Данный тип имеет синонимы <span class="b">signed int</span> и
+        <span class="b">signed</span>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">unsigned int</span>: представляет положительное целое
+        число. В зависимости от архитектуры процессора может занимать 2 байта
+        (16 бит) или 4 байта (32 бита), и из-за этого диапазон предельных
+        значений может меняться: от 0 до 65535 (для 2 байт), либо от 0 до 4 294
+        967 295 (для 4 байт).
+      </p>
+      <p>
+        В качестве синонима этого типа может использоваться
+        <span class="b">unsigned</span>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <span class="b">long</span>: представляет целое число в диапазоне от −2
+        147 483 648 до 2 147 483 647. Занимает в памяти 4 байта (32 бита).
+      </p>
+      <p>
+        У данного типа также есть синонимы <span class="b">long int</span>,
+        <span class="b">signed long int</span> и
+        <span class="b">signed long</span>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <span class="b">unsigned long</span>: представляет целое число в
+        диапазоне от 0 до 4 294 967 295. Занимает в памяти 4 байта (32 бита).
+      </p>
+      <p>Имеет синоним <span class="b">unsigned long int</span>.</p>
+    </li>
+    <li>
+      <p>
+        <span class="b">long long</span>: представляет целое число в диапазоне
+        от −9 223 372 036 854 775 808 до +9 223 372 036 854 775 807. Занимает в
+        памяти, как правило, 8 байт (64 бита).
+      </p>
+      <p>
+        Имеет синонимы <span class="b">long long int</span>,
+        <span class="b">signed long long int</span> и
+        <span class="b">signed long long</span>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">unsigned long long</span>: представляет целое число в
+        диапазоне от 0 до 18 446 744 073 709 551 615. Занимает в памяти, как
+        правило, 8 байт (64 бита).
+      </p>
+      <p>Имеет синоним <span class="b">unsigned long long int</span>.</p>
+    </li>
+    <li>
+      <p>
+        <span class="b">float</span>: представляет вещественное число ординарной
+        точности с плавающей точкой в диапазоне +/- 3.4E-38 до 3.4E+38. В памяти
+        занимает 4 байта (32 бита)
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">double</span>: представляет вещественное число двойной
+        точности с плавающей точкой в диапазоне +/- 1.7E-308 до 1.7E+308. В
+        памяти занимает 8 байт (64 бита)
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">long double</span>: представляет вещественное число
+        двойной точности с плавающей точкой не менее 8 байт (64 бит). В
+        зависимости от размера занимаемой памяти может отличаться диапазон
+        допустимых значений.
+      </p>
+    </li>
+    <li>
+      <p><span class="b">void</span>: тип без значения</p>
+    </li>
+  </ul>
+  <p>
+    Таким образом, все типы данных за исключением void могут быть разделены на
+    три группы: символьные (char, wchar_t, char16_t, char32_t), целочисленные
+    (short, int, long, long long) и типы чисел с плавающей точкой (float,
+    double, long double).
+  </p>
+  <h3>Символьные типы</h3>
+  <p>
+    Для представления символов в приложении используются типы
+    <span class="b">char</span>, <span class="b">wchar_t</span>,
+    <span class="b">char16_t</span> и <span class="b">char32_t</span>.
+  </p>
+  <p>Определим несколько переменных:</p>
+  <div>
+    <div id="highlighter_766534" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">c =</code
+                  ><code class="cpp string">'d'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">wchar_t</code>
+                  <code class="cpp plain">d =</code
+                  ><code class="cpp string">'c'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Переменная типа char в качестве значения принимает один символ в одинарных
+    кавычках: <code>char c ='d'</code>. Также можно присвоить число из
+    указанного выше в списке диапазона: <code>char c = 120</code>. В этом случае
+    значением переменной c будет тот символ, который имеет код 120 в таблице
+    символов ASCII.
+  </p>
+  <p>
+    Стоит учитывать, что для вывода на консоль символов wchar_t следует
+    использовать не std::cout, а поток <span class="b">std::wcout</span>:
+  </p>
+  <div>
+    <div id="highlighter_795957" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">a = </code
+                  ><code class="cpp string">'H'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">wchar_t</code>
+                  <code class="cpp plain">b = </code
+                  ><code class="cpp string">'e'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::wcout &lt;&lt; a &lt;&lt; b &lt;&lt; </code
+                  ><code class="cpp string">'\n'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    При этом поток std::wcout может работать как с char, так и с wchar_t. А
+    поток std::cout для переменной wchar_t вместо символа будет выводить его
+    числовой код.
+  </p>
+  <p>
+    В стандарте С++11 были добавлены типы <span class="b">char16_t</span> и
+    <span class="b">char32_t</span>, которые ориентированы на использование
+    Unicode. Однако на уровне ОС пока не реализованы потоки для работы с этими
+    типами. Поэтому если потребуется вывести на консоль значения переменных этих
+    типов, то необходимо преобразовать переменные к типам char или wchar_t:
+  </p>
+  <div>
+    <div id="highlighter_810827" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">a = </code
+                  ><code class="cpp string">'H'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">wchar_t</code>
+                  <code class="cpp plain">b = </code
+                  ><code class="cpp string">'e'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">char16_t c = </code
+                  ><code class="cpp string">'l'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">char32_t d = </code
+                  ><code class="cpp string">'o'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; a &lt;&lt; (</code
+                  ><code class="cpp color1 bold">char</code
+                  ><code class="cpp plain">)b &lt;&lt; (</code
+                  ><code class="cpp color1 bold">char</code
+                  ><code class="cpp plain">)c &lt;&lt; (</code
+                  ><code class="cpp color1 bold">char</code
+                  ><code class="cpp plain">)d &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае при выводе перед переменными указывается операция приведения
+    к типу char - <span class="b">(char)</span>, благодаря чему значения
+    переменных b, c и d преобразуются в тип char и могут быть выведены на
+    консоль с помощью потока std::cout.
+  </p>
+  <h3>Целочисленные типы</h3>
+  <p>
+    Целочисленные типы представлены следующими типами:
+    <span class="b">short</span>, <span class="b">unsigned short</span>,
+    <span class="b">int</span>, <span class="b">unsigned int</span>,
+    <span class="b">long</span>, <span class="b">unsigned long</span>,
+    <span class="b">long long</span> и
+    <span class="b">unsigned long long</span>:
+  </p>
+  <div>
+    <div id="highlighter_747227" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">short</code>
+                  <code class="cpp plain">a = -10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">unsigned </code
+                  ><code class="cpp color1 bold">short</code>
+                  <code class="cpp plain">b= 10;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">c = -30;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">unsigned </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">d = 60;</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">long</code>
+                  <code class="cpp plain">e = -170;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">unsigned </code
+                  ><code class="cpp color1 bold">long</code>
+                  <code class="cpp plain">f = 45;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp color1 bold">long</code>
+                  <code class="cpp color1 bold">long</code>
+                  <code class="cpp plain">g = 89;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Типы чисел с плавающей точкой</h3>
+  <p>
+    Типы чисел с плавающей точкой иили дробные числа представлены такими типами
+    как <span class="b">float</span>, <span class="b">double</span> и
+    <span class="b">long double</span>:
+  </p>
+  <div>
+    <div id="highlighter_210316" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">float</code>
+                  <code class="cpp plain">a = -10.45;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">b = 0.00105;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">long</code>
+                  <code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">c = 30.890045;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Размеры типов данных</h3>
+  <p>
+    В выше приведенном списке для каждого типа указан размер, который он
+    занимает в памяти. Однако стоит отметить, что предельные размеры для типов
+    разработчики компиляторов могут выбирать самостоятельно, исходя из
+    аппаратных возможностей компьютера. Стандарт устанавливает лишь минимальные
+    значения, которые должны быть. Например, для типов int и short минимальное
+    значение - 16 бит, для типа long - 32 бита, для типа long double. При этом
+    размер типа long должен быть не меньше размера типа int, а размер типа int -
+    не меньше размера типа short, а размер типа long double должен быть больше
+    double. К примеру, компилятор g++ под Windows для long double использует 12
+    байт, а компилятор, встроенный в Visual Studio и также работающий под
+    Windows, для long double использует 8 байт. То есть даже в рамках одной
+    платформы разные компиляторы могут по разному подходить к размерам некоторых
+    типов данных. Но в целом используются те размеры, которые указаны выше при
+    описании типов данных.
+  </p>
+  <p>
+    Однако бывают ситуации, когда необходимо точно знать размер определенного
+    типа. И для этого в С++ есть оператор <span class="b">sizeof()</span>,
+    который возвращает размер памяти в байтах, которую занимает переменная:
+  </p>
+  <div>
+    <div id="highlighter_557737" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">long</code>
+                  <code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">number = 2;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"sizeof(number) ="</code>
+                  <code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp keyword bold">sizeof</code
+                  ><code class="cpp plain">(number);</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод при компиляции в g++:</p>
+  <div class="console"><pre class="consoletext">sizeof(number) = 12</pre></div>
+  <p>
+    При этом при определении переменных важно понимать, что значение переменной
+    не должно выходить за те пределы, которые очерчены для ее типа. Например:
+  </p>
+  <div>
+    <div id="highlighter_894269" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c plain">unsigned </code
+                  ><code class="c color1 bold">short</code>
+                  <code class="c plain">number = -65535;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Компиляция такого кода может пройти без ошибок, хотя некоторые компиляторы,
+    как G++ могут выдавать предупреждения о том, что значение будет усечено.
+    Однако при комиляции переменная number получит значение 1 - результат
+    преобразования числа -65535 к типу unsigned short. То есть опять же
+    результат будет не совсем тот, который ожидается. Значение переменной - это
+    всего лишь набор битов в памяти, которые интерпретируются в соответствии с
+    определенным типом. И для разных типов один и тот же набор битов может
+    интерпретироваться по разному. Поэтому важно учитывать диапазоны значений
+    для того или иного типа при присвоении переменной значения.
+  </p>
+  <h3>Спецификатор auto</h3>
+  <p>
+    Иногда бывает трудно определить тип выражения. И согласно последним
+    стандартам можно предоставить компилятору самому выводить тип объекта. И для
+    этого применяется спецификатор <span class="b">auto</span>. При этом если мы
+    определяем переменную со спецификатором auto, эта переменная должна быть
+    обязательно инициализирована каким-либо значением:
+  </p>
+  <div>
+    <div id="highlighter_876632" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">auto number = 5;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    На основании присвоенного значения компилятор выведет тип переменной.
+    Неинициализированные переменные со спецификатором auto не допускаются:
+  </p>
+  <div>
+    <div id="highlighter_120590" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">auto number;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

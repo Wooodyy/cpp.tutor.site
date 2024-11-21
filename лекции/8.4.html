@@ -1,0 +1,914 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Переопределение операторов ввода и вывода</h2>
+
+  <p>
+    Операторы ввода &gt;&gt; и вывода &lt;&lt; прекрасно работают для
+    примитивных типов данных, таких как int или double. В то же время для
+    использования их с объектами классов необходимо переопределять эти
+    операторы.
+  </p>
+  <h3>Оператор &lt;&lt;</h3>
+  <p>
+    Обычно первый параметр оператора
+    <span class="b">&lt;&lt;</span> представляет ссылку на неконстантный объект
+    ostream. Данный объект не должен представлять константу, так как запись в
+    поток изменяет его состояние. Причем параметр представляет именно ссылку,
+    так как нельзя копировать объект класса ostream.
+  </p>
+  <p>
+    Второй параметр оператора определяется как ссылка на константу объекта
+    класса, который надо вывести в поток.
+  </p>
+  <p>
+    Для совместимости с другими операторами переопределяемый оператор должен
+    возвращать значение параметра ostream.
+  </p>
+  <p>
+    Также следует отметить, что операторы ввода и вывода не должны быть членами
+    в классе, а определяются вне класса как обычные функции.
+  </p>
+  <div>
+    <div id="highlighter_606704" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">struct</code>
+                  <code class="cpp plain">Person </code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain"
+                    >std::ostream&amp; operator &lt;&lt; (std::ostream &amp;os, </code
+                  ><code class="cpp keyword bold">const</code>
+                  <code class="cpp plain">Person &amp;p)</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">os &lt;&lt; p.name &lt;&lt; </code
+                  ><code class="cpp string">" "</code>
+                  <code class="cpp plain">&lt;&lt; p.age;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person tom; </code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.name = </code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">tom.age = 31;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; tom &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">&nbsp;</div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае оператор вывода определяется для объектов структуры Person.
+    Сам оператор по сути просто выводит имя и возраст пользователя через пробел:
+  </p>
+  <div class="console"><pre class="consoletext">Tom 31</pre></div>
+  <h3>Оператор &gt;&gt;</h3>
+  <p>
+    Первый параметр оператора <span class="b">&gt;&gt;</span>, как правило,
+    представляет ссылку на объект istream, с которого осуществляется чтение.
+    Второй параметр представляет ссылку на неконстантный объект, в который надо
+    считать данные.
+  </p>
+  <p>
+    Обычно в качестве результата операторы возвращают ссылку на поток ввода
+    istream из первого параметра.
+  </p>
+  <div>
+    <div id="highlighter_822477" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">struct</code>
+                  <code class="cpp plain">Person </code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain"
+                    >std::istream&amp; operator &gt;&gt; (std::istream&amp; in,
+                    Person&amp; p)</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >in &gt;&gt; p.name &gt;&gt; p.age;</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">in;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person bob;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Input name and age: "</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cin &gt;&gt; bob;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; bob.name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; bob.age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Оператор ввода последовательно считывает из потока имя и возраст
+    пользователя. При этом в данном случае предполагается, что имя представляет
+    одно слово. Если стоит задача, считать сложное имя, которые состоит из
+    нескольких слов, или имя и фамилию, то естественно надо определять более
+    сложную логику.
+  </p>
+  <p>Пример работы программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+Input name and age: Bob 32
+Name: Bob	Age: 32
+</pre
+    >
+  </div>
+  <p>
+    Однако что если мы введем для возраста вместо числа строку? В этом случае
+    переменная age получит неопределенное значение. Существуют различные
+    варианты, как обрабатывать подобные ситуации. Но в качестве примера мы можем
+    в случае некорректного ввода устанавливать значение по умолчанию:
+  </p>
+  <div>
+    <div id="highlighter_801278" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain"
+                    >std::istream&amp; operator &gt;&gt; (std::istream&amp; in,
+                    Person&amp; p)</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >in &gt;&gt; p.name &gt;&gt; p.age;</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(!in)</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">p = Person();</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">in;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    С помощью выражения <code>if(!is)</code> проверяем, является ли ввод
+    неудачным. Если он неудачен, то используем конструктор без параметров для
+    создания объекта.
+  </p>
+  <h3>Чтение и запись файла</h3>
+  <p>
+    Определив операторы ввода и выводы, мы можем их использовать также и для
+    чтения и записи файла:
+  </p>
+  <div>
+    <div id="highlighter_757689" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+              <div class="line number38 index37 alt1">38</div>
+              <div class="line number39 index38 alt2">39</div>
+              <div class="line number40 index39 alt1">40</div>
+              <div class="line number41 index40 alt2">41</div>
+              <div class="line number42 index41 alt1">42</div>
+              <div class="line number43 index42 alt2">43</div>
+              <div class="line number44 index43 alt1">44</div>
+              <div class="line number45 index44 alt2">45</div>
+              <div class="line number46 index45 alt1">46</div>
+              <div class="line number47 index46 alt2">47</div>
+              <div class="line number48 index47 alt1">48</div>
+              <div class="line number49 index48 alt2">49</div>
+              <div class="line number50 index49 alt1">50</div>
+              <div class="line number51 index50 alt2">51</div>
+              <div class="line number52 index51 alt1">52</div>
+              <div class="line number53 index52 alt2">53</div>
+              <div class="line number54 index53 alt1">54</div>
+              <div class="line number55 index54 alt2">55</div>
+              <div class="line number56 index55 alt1">56</div>
+              <div class="line number57 index56 alt2">57</div>
+              <div class="line number58 index57 alt1">58</div>
+              <div class="line number59 index58 alt2">59</div>
+              <div class="line number60 index59 alt1">60</div>
+              <div class="line number61 index60 alt2">61</div>
+              <div class="line number62 index61 alt1">62</div>
+              <div class="line number63 index62 alt2">63</div>
+              <div class="line number64 index63 alt1">64</div>
+              <div class="line number65 index64 alt2">65</div>
+              <div class="line number66 index65 alt1">66</div>
+              <div class="line number67 index66 alt2">67</div>
+              <div class="line number68 index67 alt1">68</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;fstream&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp preprocessor">#include &lt;vector&gt;</code>
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp keyword bold">class</code>
+                  <code class="cpp plain">Person </code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp keyword bold">public</code
+                  ><code class="cpp plain">:</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(std::string n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a): name(n),age(a) { }</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(){ }</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">};</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain"
+                    >std::ostream&amp; operator &lt;&lt; (std::ostream &amp;os, </code
+                  ><code class="cpp keyword bold">const</code>
+                  <code class="cpp plain">Person &amp;p)</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">os &lt;&lt; p.name &lt;&lt; </code
+                  ><code class="cpp string">" "</code>
+                  <code class="cpp plain">&lt;&lt; p.age;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain"
+                    >std::istream&amp; operator &gt;&gt; (std::istream&amp; in,
+                    Person&amp; p)</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >in &gt;&gt; p.name &gt;&gt; p.age;</code
+                  >
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(!in)</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">p = Person();</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">in;</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// начальные данные - вектор объектов Person</code
+                  >
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::vector&lt;Person&gt; people =</code
+                  >
+                </div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">, 23),</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(</code
+                  ><code class="cpp string">"Bob"</code
+                  ><code class="cpp plain">, 25),</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(</code
+                  ><code class="cpp string">"Alice"</code
+                  ><code class="cpp plain">, 22),</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person(</code
+                  ><code class="cpp string">"Kate"</code
+                  ><code class="cpp plain">, 31)</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">};</code>
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments">// запись данных в файл</code>
+                </div>
+                <div class="line number38 index37 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::ofstream out(</code
+                  ><code class="cpp string">"D:\\users.txt"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number39 index38 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(out.is_open())</code>
+                </div>
+                <div class="line number40 index39 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number41 index40 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >i = 0; i &lt; people.size(); i++)</code
+                  >
+                </div>
+                <div class="line number42 index41 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number43 index42 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >out &lt;&lt; people[i] &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number44 index43 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number45 index44 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number46 index45 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">out.close();</code>
+                </div>
+                <div class="line number47 index46 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// вектор для считываемых данных</code
+                  >
+                </div>
+                <div class="line number48 index47 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::vector&lt;Person&gt; users;</code
+                  >
+                </div>
+                <div class="line number49 index48 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// чтение ранее записанных данных из файла</code
+                  >
+                </div>
+                <div class="line number50 index49 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::ifstream in(</code
+                  ><code class="cpp string">"D:\\users.txt"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number51 index50 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(in.is_open())</code>
+                </div>
+                <div class="line number52 index51 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number53 index52 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">Person p;</code>
+                </div>
+                <div class="line number54 index53 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">while</code>
+                  <code class="cpp plain">(in &gt;&gt; p)</code>
+                </div>
+                <div class="line number55 index54 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number56 index55 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">users.push_back(p);</code>
+                </div>
+                <div class="line number57 index56 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number58 index57 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number59 index58 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">in.close();</code>
+                </div>
+                <div class="line number60 index59 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// вывод считанных данных на консоль</code
+                  >
+                </div>
+                <div class="line number61 index60 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"All users:"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number62 index61 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >i = 0; i &lt; users.size(); i++)</code
+                  >
+                </div>
+                <div class="line number63 index62 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number64 index63 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; users[i] &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number65 index64 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number66 index65 alt1">&nbsp;</div>
+                <div class="line number67 index66 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number68 index67 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь для класса Person определены операторы ввода и вывода. С помощью
+    оператора вывода данные будут записываться в файл users.txt, а с помощью
+    оператора ввода - считываться из файла. В конце считанные данные выводятся
+    на консоль:
+  </p>
+  <p>Результат работы программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+All users:
+Tom 23
+Bob 25
+Alice 22
+Kate 31
+</pre
+    >
+  </div>
+</div>

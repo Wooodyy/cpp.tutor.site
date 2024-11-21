@@ -1,0 +1,304 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Константы</h2>
+
+  <p>
+    Отличительной особенностью переменных является то, что мы можем многократно
+    в течение работы программы изменять их значение:
+  </p>
+  <div>
+    <div id="highlighter_232978" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 7;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">x = 9;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">x = 5;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Но кроме переменных в языке программирования C++ можно определять константы.
+    Их значение устанавливается один раз и впоследствии мы его не можем
+    изменить. Константа определяется практически также, как и переменная за тем
+    исключением, что в начале определения константы идет ключевое слово
+    <span class="b">const</span>. Например:
+  </p>
+  <div>
+    <div id="highlighter_417733" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 22;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::cout &lt;&lt; x;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Если же мы захотим после определения константы присвоить ей некоторое
+    значение, то компилятор не сможет скомпилировать программу и выведет ошибку:
+  </p>
+  <div>
+    <div id="highlighter_959714" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 22;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">x = 78;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть такой код не будет работать. И так как нельзя изменить значения
+    константы, то ее всегда необходимо инициализировать, если мы хотим, чтобы
+    она имела некоторое значение.
+  </p>
+  <p>
+    Если константа не будет инициализирована, то компилятор также выведет ошибку
+    и не сможет скомпилировать программу, как в следующем случае:
+  </p>
+  <div>
+    <div id="highlighter_877735" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В качестве значения константам можно передавать как обычные литералы, так и
+    динамически вычысляемые значения, например, значения переменных или других
+    констант:
+  </p>
+  <div>
+    <div id="highlighter_462413" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 10;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = 7;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">d = b;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = a;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Обычно в качестве констант определяются такие значения, которые должны
+    оставаться постоянными в течение работы всей программы и не могут быть
+    изменены. Например, если программы выполняет математические операции с
+    использованием числа PI, то было бы оптимально определить данные значение
+    как константу, так как оно все равно в принципе неизменно:
+  </p>
+  <div>
+    <div id="highlighter_589914" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">float</code>
+                  <code class="cpp plain">pi = 3.14;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

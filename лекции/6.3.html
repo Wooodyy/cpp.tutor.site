@@ -1,0 +1,432 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Типы исключений</h2>
+
+  <p>
+    Кроме типа exception в C++ есть еще несколько производных типов исключений,
+    которые могут использоваться при различных ситуациях. Основные из них:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">runtime_error</span>: общий тип исключений, которые
+        возникают во время выполнения
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">range_error</span>: исключение, которое возникает, когда
+        полученный результат превосходит допустимый диапазон
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">overflow_error</span>: исключение, которое возникает,
+        если полученный результат превышает допустимый диапазон
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">underflow_error</span>: исключение, которое возникает,
+        если полученный в вычислениях результат имеет недопустимые отрицательное
+        значение (выход за нижнюю допустимую границу значений)
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">logic_error</span>: исключение, которое возникает при
+        наличии логических ошбок к коде программы
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">domain_error</span>: исключение, которое возникает, если
+        для некоторого значения, передаваемого в функцию, не определено
+        результата
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">invalid_argument</span>: исключение, которое возникает
+        при передаче в функцию некорректного аргумента
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">length_error</span>: исключение, которое возникает при
+        попытке создать объект большего размера, чем допустим для данного типа
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">out_of_range</span>: исключение, которое возникает при
+        попытке доступа к элементам вне допустимого диапазона
+      </p>
+    </li>
+  </ul>
+  <img
+    src="https://metanit.com/cpp/tutorial/pics/6.1.png"
+    alt="Типы исключений в C++ и std::exception"
+  />
+  <p>
+    Большинство этих типов определено в заголовочном файле
+    <span class="b">stdexcept</span>, за исключением класса
+    <span class="b">bad_alloc</span>, который определн в файле
+    <span class="b">new</span>, и класса <span class="b">bad_cast</span>,
+    который определен в файле <span class="b">type_info</span>.
+  </p>
+  <p>
+    В отличие от классов exception, bad_alloc и bad_cast в конструкторы других
+    типов можно передать строку, то есть таким образом можно передать сообщение
+    об ошибке.
+  </p>
+  <p>
+    Конструкция try...catch может использовать несколько блоков catch для
+    обработки различных типов исключений. При возникновении исключения для его
+    обработки будет выбран тот, который использует тип возникшего исключения.
+  </p>
+  <p>
+    При использовании нескольких блоков catch вначале помещаются блоки catch,
+    которые обрабатывают более частные исключения, а только потом блоки catch с
+    более общими типами исключений:
+  </p>
+  <div>
+    <div id="highlighter_185520" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+              <div class="line number37 index36 alt2">37</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;exception&gt;</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;stdexcept&gt;</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">divide(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number6 index5 alt1">&nbsp;</div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x = 500;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">y = 0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">try</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">z = divide(x, y);</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; z &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">catch</code>
+                  <code class="cpp plain">(std::overflow_error err)</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Overflow_error: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; err.what() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">catch</code>
+                  <code class="cpp plain">(std::runtime_error err)</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Runtime_error: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; err.what() &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number23 index22 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">catch</code>
+                  <code class="cpp plain">(std::exception err)</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Exception!!!"</code
+                  ><code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number27 index26 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"The End..."</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number30 index29 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number31 index30 alt2">&nbsp;</div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">divide(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b)</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number34 index33 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(b == 0)</code>
+                </div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">throw</code>
+                  <code class="cpp plain">std::runtime_error(</code
+                  ><code class="cpp string">"Division by zero!"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">a / b;</code>
+                </div>
+                <div class="line number37 index36 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь функция divide, если параметр b равен 0, выбрасывает исключение типа
+    <span class="b">runtime_error</span>. Исключение инициализируется сообщением
+    об ошибке "Division by zero!".
+  </p>
+  <p>
+    В функции main конструкция try..catch использует три блока catch. Причем
+    последний блок представляет самый общий тип исключений exception. Второй
+    блок обрабатывает исключения типа runtime_error, производный от exception. А
+    первый блок обрабатывает исключения типа overflow_error, который является
+    производным от runtime_error.
+  </p>
+  <p>
+    Также все типы исключений имеют метод <span class="b">what()</span>, который
+    возвращает информацию об ошибке. И в данном случае программа выдаст
+    следующий результат:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+Runtime_error: Division by zero!
+The End...
+</pre
+    >
+  </div>
+</div>

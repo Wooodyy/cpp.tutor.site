@@ -1,0 +1,619 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Параметры функции</h2>
+
+  <p>
+    Через параметры в функцию можно передать различеые значения. Параметры
+    перечисляются в скобках после имени функции имеют следующее определение:
+  </p>
+  <div>
+    <div id="highlighter_838927" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">тип название_параметра</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Например, определим программу обменного пункта:</p>
+  <div>
+    <div id="highlighter_128994" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">exchange(</code
+                  ><code class="cpp color1 bold">double</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp color1 bold">double</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">rate = 58;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">sum = 5000;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">exchange(rate, sum);</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">exchange(60, 5000);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">&nbsp;</div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">exchange(</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">currate, </code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">sum)</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">double</code>
+                  <code class="cpp plain">result = sum / currate;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt;&nbsp; </code
+                  ><code class="cpp string">"Rate: "</code>
+                  <code class="cpp plain">&lt;&lt; currate &lt;&lt; </code
+                  ><code class="cpp string">"\tSum: "</code>
+                  <code class="cpp plain">&lt;&lt; sum </code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">&lt;&lt; </code
+                  ><code class="cpp string">"\tResult: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; result &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>При запуске программы мы получим следующий консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Rate: 58	Sum: 5000	Result: 86.2069
+Rate: 60	Sum: 5000	Result: 83.3333
+</pre
+    >
+  </div>
+  <p>
+    Функция exchange принимает два параметра типа double, которые называются
+    currate (текущий курс) и sum (сумма, которую надо обменять).
+  </p>
+  <p>
+    При вызове функции exchange для этих параметров необходимо передать
+    значения. Значения, передаваемые параметрам функции при ее вызове,
+    называются аргументами. В данном случае в качестве аргументов передаются
+    обычные числа. При этом аргументы передаются по позиции, то есть первый
+    аргумент передается первому параметру, второй аргумент - второму параметру и
+    так далее. При этом аргументы должны соответствовать параметрам по типу или
+    допускать неявно преобразование в тип параметра.
+  </p>
+  <p>Рассмотрим еще один пример с функциями:</p>
+  <div>
+    <div id="highlighter_910916" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display(std::string, </code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number6 index5 alt1">&nbsp;</div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">display(</code
+                  ><code class="cpp string">"Tom"</code
+                  ><code class="cpp plain">, 33);</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">square(4.56);</code>
+                </div>
+                <div class="line number11 index10 alt2">&nbsp;</div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x)</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Square of "</code>
+                  <code class="cpp plain">&lt;&lt; x &lt;&lt; </code
+                  ><code class="cpp string">" is equal to "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; x * x &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number18 index17 alt1">&nbsp;</div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">display(std::string name, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">age)</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Name: "</code>
+                  <code class="cpp plain">&lt;&lt; name &lt;&lt; </code
+                  ><code class="cpp string">"\tAge: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; age &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Функция display принимает параметры типов string и int. При вызове этой
+    функции в нее вначале передается строка ("Tom"), так как параметр типа
+    string идет первым, а потом число (33), так как параметр типа int идет
+    вторым: <code>display("Tom", 33)</code>
+  </p>
+  <p>
+    Функция square принимает число и выводит на консоль его квадрат. Параметр
+    функции представляет тип int, однако при ее вызове ей передается число с
+    плавающей точкой, то есть значение типа double. Поэтому производится
+    преобразование от типа double к типу int, дробная часть отбрасывается, и в
+    итоге функция получает число 4.
+  </p>
+  <h3>Аргументы по умолчанию</h3>
+  <p>
+    Функция может принимать аргументы по умолчанию, то есть некоторые значения,
+    которые функция использует, если при вызове для параметров явным образом не
+    передается значение:
+  </p>
+  <div>
+    <div id="highlighter_630463" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">multiply(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">m = 3)</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">result = n * m;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"n * m = "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; result &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">multiply(4, 5);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">multiply(4);</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для установки значения по умолчанию параметру присваивается это значение
+    <code>int m = 3</code>. И если для второго параметра не будет передано
+    значение, то он будет использовать значение по умолчанию. Консольный вывод
+    программы:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+n * m = 20
+n * m = 12
+</pre
+    >
+  </div>
+  <p>
+    При объявлении прототипа подобной функции он тоже может содержать значение
+    по умолчанию для параметра. И в этом случае мы можем не определять в функции
+    значение по умолчанию для параметра - оно будет браться из прототипа:
+  </p>
+  <div>
+    <div id="highlighter_195511" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">multiply(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">m=3);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">multiply(4, 5);</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">multiply(4);</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number11 index10 alt2">&nbsp;</div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">multiply(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">m)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">result = n * m;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"n * m = "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; result &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

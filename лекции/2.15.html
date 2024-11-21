@@ -1,0 +1,1144 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Массивы</h2>
+
+  <p>
+    Массив представляет набор однотипных данных. Формальное определение массива
+    выглядит следующим образом:
+  </p>
+  <div>
+    <div id="highlighter_351935" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain"
+                    >тип_переменной название_массива [длина_массива]</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После типа переменной идет название массива, а затем в квадратных скобках
+    его размер. Например, определим массив из 4 чисел:
+  </p>
+  <div>
+    <div id="highlighter_720571" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[4];</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Данный массив имеет четыре числа, но все эти числа имеют неопределенное
+    значение. Однако мы можем выполнить инициализацию и присвоить этим числам
+    некоторые начальные значения через фигурные скобки:
+  </p>
+  <div>
+    <div id="highlighter_365291" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[4] = {1,2,3,4};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Значения в фигурных скобках еще называют инициализаторами. Если
+    инициализаторов меньше, чем элементов в массиве, то инициализаторы
+    используются для первых элементов. Если в инициализаторов больше, чем
+    элементов в массиве, то при компиляции возникнет ошибка:
+  </p>
+  <div>
+    <div id="highlighter_730360" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[4] = {1, 2, 3, 4, 5, 6};</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Здесь массив имеет размер 4, однако ему передается 6 значений.</p>
+  <p>
+    Если размер массива не указан явно, то он выводится из количества
+    инициализаторов:
+  </p>
+  <div>
+    <div id="highlighter_626320" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[] = {1, 2, 3, 4, 5, 6};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>В данном случае в массиве есть 6 элементов.</p>
+  <p>
+    Свои особенности имеет инициализация символьных массивов. Мы можем передать
+    символьному массиву как набор инициализаторов, так и строку:
+  </p>
+  <div>
+    <div id="highlighter_525125" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">s1[] = {</code
+                  ><code class="cpp string">'h'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'e'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'l'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'l'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'o'</code
+                  ><code class="cpp plain">};</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">s2[] = </code
+                  ><code class="cpp string">"world"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Причем во втором случае массив s2 будет иметь не 5 элементов, а 6, поскольку
+    при инициализации строкой в символьный массив автоматически добавляется
+    нулевой символ '\0'.
+  </p>
+  <p>При этом не допускается присвоение одному массиву другого массива:</p>
+  <div>
+    <div id="highlighter_7836" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">nums1[] = {1,2,3,4,5};</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >nums2[] = nums1;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// ошибка</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >nums2 =
+                    nums1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// ошибка</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    После определения массива мы можем обратиться к его отдельным элементам по
+    индексу. Индексы начинаются с нуля, поэтому для обращения к первому элементу
+    необходимо использовать индекс 0. Обратившись к элементу по индексу, мы
+    можем получить его значение, либо изменить его:
+  </p>
+  <div>
+    <div id="highlighter_514823" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[4] = {1,2,3,4};</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">first_number = numbers[0];</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; first_number &lt;&lt; std::endl; </code
+                  ><code class="cpp comments">// 1</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >numbers[0] =
+                    34;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// изменяем элемент</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; numbers[0] &lt;&lt; std::endl; </code
+                  ><code class="cpp comments">// 34</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Число элементов массива также можно определять через константу:</p>
+  <div>
+    <div id="highlighter_89801" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n = 4;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[n] = {1,2,3,4};</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Перебор массивов</h3>
+  <p>
+    Используя циклы, можно пробежаться по всему массиву и через индексы
+    обратиться к его элементам:
+  </p>
+  <div>
+    <div id="highlighter_848921" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[4] = {1,2,3,4};</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">size = </code
+                  ><code class="cpp keyword bold">sizeof</code
+                  ><code class="cpp plain">(numbers)/</code
+                  ><code class="cpp keyword bold">sizeof</code
+                  ><code class="cpp plain">(numbers[0]);</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">i=0; i &lt; size; i++)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; numbers[i] &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Чтобы пройтись по массиву в цикле, вначале надо найти длину массива. Для
+    нахождения длины применяется оператор <span class="b">sizeof</span>. По сути
+    длина массива равна совокупной длине его элементов. Все элементы
+    представляют один и тот же тип и занимают один и тот же размер в памяти.
+    Поэтому с помощью выражения <code>sizeof(numbers)</code> находим длину всего
+    массива в байтах, а с помощью выражения <code>sizeof(numbers[0])</code> -
+    длину одного элемента в байтах. Разделив два значения, можно получить
+    количество элементов в массиве. А далее с помощью цикла for перебираем все
+    элементы, пока счетчик i не станет равным длине массива. В итоге на консоль
+    будут выведены все элементы массива:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+1
+2
+3
+4
+</pre
+    >
+  </div>
+  <p>
+    Но также есть и еще одна форма цикла <span class="b">for</span>, которая
+    предназначена специально для работа с коллекциями, в том числе с массивами.
+    Эта форма имеет следующее формальное определение:
+  </p>
+  <div>
+    <div id="highlighter_427411" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(тип переменная : коллекция)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">инструкции;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Используем эту форму для перебора массива:</p>
+  <div>
+    <div id="highlighter_450280" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[4] = {1,2,3,4};</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">number : numbers)</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; number &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    При переборе массива каждый перебираемый элемент будет помещаться в
+    переменную number, значение которой в цикле выводится на консоль.
+  </p>
+  <p>
+    Если нам неизвестен тип объектов в массиве, то мы можем использовать
+    спецификатор auto для определения типа:
+  </p>
+  <div>
+    <div id="highlighter_646698" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(auto number : numbers)</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; number &lt;&lt; std::endl;</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Многомерные массивы</h3>
+  <p>
+    Кроме одномерных массивов в C++ есть многомерные. Элементы таких массивов
+    сами в свою очередь являются массивами, в которых также элементы могут быть
+    массивами. Например, определим двухмерный массив чисел:
+  </p>
+  <div>
+    <div id="highlighter_561088" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">numbers[3][2];</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Такой массив состоит из трех элементов, при этом каждый элемент представляет
+    массив из двух элементов. Инициализируем подобный массив:
+  </p>
+  <div>
+    <div id="highlighter_471571" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[3][2] = { {1, 2}, {4, 5}, {7, 8} };</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Вложенные фигурные скобки очерчивают элементы для каждого подмассива. Такой
+    массив еще можно представить в виде таблицы:
+  </p>
+  <table style="border: 1px solid #ccc">
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Также при инициализации можно опускать фигурные скобки:</p>
+  <div>
+    <div id="highlighter_72495" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[3][2] = { 1, 2, 4, 5, 7, 8 };</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Возможна также инициализация не всех элементов, а только некоторых:</p>
+  <div>
+    <div id="highlighter_916763" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[3][2] = { {1, 2}, {}, {7} };</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    И чтобы обратиться к элементам вложенного массива, потребуется два индекса:
+  </p>
+  <div>
+    <div id="highlighter_836851" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[3][2] = { {1, 2}, {3, 4}, {5, 6} };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; numbers[1][0] &lt;&lt;
+                    std::endl;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 3</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >numbers[1][0] =
+                    12;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// изменение элемента</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; numbers[1][0] &lt;&lt;
+                    std::endl;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 12</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Переберем двухмерный массив:</p>
+  <div>
+    <div id="highlighter_75959" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c preprocessor">#include &lt;iostream&gt;</code>
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">const</code>
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">rows = 3, columns = 2;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain"
+                    >numbers[rows][columns] = { {1, 2}, {3, 4}, {5, 6} };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">for</code
+                  ><code class="c plain">(</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain">i=0; i &lt; rows; i++)</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">{</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="c spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">for</code
+                  ><code class="c plain">(</code
+                  ><code class="c color1 bold">int</code>
+                  <code class="c plain">j=0; j &lt; columns; j++)</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="c spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">{</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="c spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain"
+                    >std::cout &lt;&lt; numbers[i] [j] &lt;&lt; </code
+                  ><code class="c string">"\t"</code
+                  ><code class="c plain">;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="c spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">}</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="c spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="c spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="c keyword bold">return</code>
+                  <code class="c plain">0;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="c plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также для перебора элементов многомерного массива можно использовать другую
+    форму цикла for:
+  </p>
+  <div>
+    <div id="highlighter_308021" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">const</code>
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">rows = 3, columns = 2;</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >numbers[rows][columns] = { {1, 2}, {3, 4}, {5, 6} };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code
+                  ><code class="cpp plain"
+                    >(auto &amp;subnumbers : numbers)</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">number : subnumbers)</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; number &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  >&nbsp;
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для перебора массивов, которые входят в массив, применяются ссылки. То есть
+    во внешнем цикле
+    <code>for(auto &amp;subnumbers : numbers)</code> &amp;subnumbers
+    представляет ссылку на подмассив в массиве. Во внутреннем цикле
+    <code>for(int number : subnumbers)</code> из каждого подмассива в subnumbers
+    получаем отдельные его элементы в переменную number и выводим ее значение на
+    консоль.
+  </p>
+</div>

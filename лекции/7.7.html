@@ -1,0 +1,1082 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Forward_list</h2>
+
+  <p>
+    Контейнер <span class="b">forward_list</span> представляет односвязный
+    список. Для его использования необходимо подключить заголовочный файл
+    <span class="b">forward_list</span>.
+  </p>
+  <p>Создание односвязного списка:</p>
+  <div>
+    <div id="highlighter_651559" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    list1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// пустой список</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    list2(5);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// list2 имеет 5 элементов, каждый из которых имеет
+                    значение по умолчанию</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list3(5,
+                    2);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// list3 состоит из 5 чисел, каждое число равно 2</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list4{ 1, 2, 4, 5
+                    };&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// list4 состоит из чисел 1, 2, 4, 5</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list5 = { 1, 2, 3, 4, 5 }; </code
+                  ><code class="cpp comments"
+                    >// list5 состоит из чисел 1, 2, 3, 4, 5</code
+                  >
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt;
+                    list6(list4);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// list6 - копия списка list4</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list7 =
+                    list4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// list7 - копия списка list4</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list8({ 1, 2, 3, 4, 5, 6 }); </code
+                  ><code class="cpp comments"
+                    >// list8&nbsp; состоит из чисел 1, 2, 3, 4, 5, 6</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Получение элементов</h3>
+  <p>
+    Напрямую в списке forward_list можно получить только первый элемент. Для
+    этого применяется функция <span class="b">front()</span>. Для перебора
+    элементов также можно использовать цикл:
+  </p>
+  <div>
+    <div id="highlighter_744508" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;forward_list&gt;</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">&nbsp;</div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain"
+                    >first = numbers.front();&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 1</code>
+                </div>
+                <div class="line number9 index8 alt2">&nbsp;</div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code>
+                  <code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n : numbers)</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; n &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также для перебора и получения элементов можно использовать итераторы.
+    Причем класс forward_list добавляет ряд дополнительных функций для получения
+    итераторов: <span class="b">before_begin()</span> и
+    <span class="b">cbefore_begin()</span>. Обе функции возвращают итератор
+    (вторая функция возвращает константный итератор <code>const_iterator</code>)
+    на несуществующий элемент непосредственно перед началом списка. К значению
+    по этому итератору обратиться нельзя.
+  </p>
+  <div>
+    <div id="highlighter_686413" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;forward_list&gt;</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">&nbsp;</div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >auto prev = numbers.before_begin();</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">&nbsp;</div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >auto current = numbers.begin();</code
+                  >
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">auto end = numbers.end();</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">while</code>
+                  <code class="cpp plain">(current != end)</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">{</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; *current &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">current++;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">}</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number18 index17 alt1">&nbsp;</div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Размер списка</h3>
+  <p>
+    По умолчанию класс forward_list не определяет никаких функций, которые
+    позволяют получить размер контейнера. В этом классе только функция
+    <span class="b">max_size()</span>, которая позволяет получить масимальный
+    размер контейнера.
+  </p>
+  <p>
+    Функция <span class="b">empty()</span> позволяет узнать, пуст ли список.
+    Если он пуст, то функция возвращает значение true, иначе возвращается
+    значение false:
+  </p>
+  <div>
+    <div id="highlighter_893793" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">if</code>
+                  <code class="cpp plain">(numbers.empty())</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"The forward_list is empty"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">else</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string"
+                    >"The forward_list is not empty"</code
+                  >
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Для изменения размера контейнера можно использовать функцию
+    <span class="b">resize()</span>, которая имеет две формы:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">resize(n)</span>: оставляет в списке n первых элементов.
+        Если список содержит больше элементов, то он усекается до первых n
+        элементов. Если размер списка меньше n, то добавляются недостающие
+        элементы и инициализируются значением по умолчанию
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">resize(n, value)</span>: также оставляет в списке n
+        первых элементов. Если размер списка меньше n, то добавляются
+        недостающие элементы со значением value
+      </p>
+    </li>
+  </ul>
+  <p>Использование функции:</p>
+  <div>
+    <div id="highlighter_940917" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5, 6 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">numbers.resize(4);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// оставляем первые четыре элемента - numbers = {1, 2, 3,
+                    4}</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >numbers.resize(6, 8);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments"
+                    >// numbers = {1, 2, 3, 4, 8, 8}</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Изменение элементов списка</h3>
+  <p>
+    Функция <span class="b">assign()</span> позволяет заменить все элементы
+    списка определенным набором. Она имеет следующие формы:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">assign(il)</span>: заменяет содержимое контейнера
+        элементами из списка инициализации il
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">assign(n, value)</span>: заменяет содержимое контейнера
+        n элементами, которые имеют значение value
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">assign(begin, end)</span>: заменяет содержимое
+        контейнера элементами из диапазона, на начало и конец которого указывают
+        итераторы begin и end
+      </p>
+    </li>
+  </ul>
+  <p>Применение функции:</p>
+  <div>
+    <div id="highlighter_872229" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain"
+                    >numbers.assign({ 21, 22, 23, 24, 25 }); </code
+                  ><code class="cpp comments"
+                    >// numbers = { 21, 22, 23, 24, 25 }</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain"
+                    >numbers.assign(4, 3);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// numbers = {3, 3, 3, 3}</code>
+                </div>
+                <div class="line number6 index5 alt1">&nbsp;</div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">std::list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; values = { 6, 7, 8, 9, 10, 11 };</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp plain"
+                    >auto start = ++values.begin();&nbsp; </code
+                  ><code class="cpp comments"
+                    >// итератор указывает на второй элемент из values</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">auto end = values.end();</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain">numbers.assign(start, end); </code
+                  ><code class="cpp comments"
+                    >//&nbsp; numbers = { 7, 8, 9, 10, 11 }</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Функция <span class="b">swap()</span> обменивает значениями два списка:</p>
+  <div>
+    <div id="highlighter_757179" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; list1 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&gt; list2 = { 6, 7, 8, 9};</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">list1.swap(list2);</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp comments">// list1 = { 6, 7, 8, 9};</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp comments"
+                    >// list2 = { 1, 2, 3, 4, 5 };</code
+                  >
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Добавление элементов</h3>
+  <p>Для добавления элементов в forward_list применяются следующие функции:</p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">push_front(val)</span>: добавляет объект val в начало
+        списка
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">emplace_front(val)</span>: добавляет объект val в начало
+        списка
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">emplace_after(p, val)</span>: вставляет объект val после
+        элемента, на который указывает итератор p. Возвращает итератор на
+        вставленный элемент. Если p представляет итератор на позицию после конца
+        списка, то результат неопределен.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert_after(p, val)</span>: вставляет объект val после
+        элемента, на который указывает итератор p. Возвращает итератор на
+        вставленный элемент.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert_after(p, n, val)</span>: вставляет n объектов val
+        после элемента, на который указывает итератор p. Возвращает итератор на
+        последний вставленный элемент.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert_after(p, begin, end)</span>: вставляет после
+        элемента, на который указывает итератор p, набор объектов из другого
+        контейнера, начало и конец которого определяется итераторами begin и
+        end. Возвращает итератор на последний вставленный элемент.
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">insert_after(p, il)</span>: вставляет после элемента, на
+        который указывает итератор p, список инициализации il. Возвращает
+        итератор на последний вставленный элемент.
+      </p>
+    </li>
+  </ul>
+  <p>Применение функций:</p>
+  <div>
+    <div id="highlighter_436194" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+              <div class="line number23 index22 alt2">23</div>
+              <div class="line number24 index23 alt1">24</div>
+              <div class="line number25 index24 alt2">25</div>
+              <div class="line number26 index25 alt1">26</div>
+              <div class="line number27 index26 alt2">27</div>
+              <div class="line number28 index27 alt1">28</div>
+              <div class="line number29 index28 alt2">29</div>
+              <div class="line number30 index29 alt1">30</div>
+              <div class="line number31 index30 alt2">31</div>
+              <div class="line number32 index31 alt1">32</div>
+              <div class="line number33 index32 alt2">33</div>
+              <div class="line number34 index33 alt1">34</div>
+              <div class="line number35 index34 alt2">35</div>
+              <div class="line number36 index35 alt1">36</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;list&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;forward_list&gt;</code
+                  >
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&gt; numbers = { 7, 8 };</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">numbers.push_front(6);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// добавляем в начало число 6</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { 6, 7, 8 }</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">&nbsp;</div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >numbers.emplace_front(-3);&nbsp; </code
+                  ><code class="cpp comments"
+                    >// добавляем в начало число -3</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, 6, 7, 8 }</code
+                  >
+                </div>
+                <div class="line number13 index12 alt2">&nbsp;</div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">auto iter = numbers.begin();</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >iter = numbers.emplace_after(iter, -2); </code
+                  ><code class="cpp comments"
+                    >// добавляем после итератора число -2</code
+                  >
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, -2, 6, 7, 8 }</code
+                  >
+                </div>
+                <div class="line number17 index16 alt2">&nbsp;</div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >iter = numbers.insert_after(iter, -1);</code
+                  >
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, -2, -1, 6, 7, 8 }</code
+                  >
+                </div>
+                <div class="line number20 index19 alt1">&nbsp;</div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >iter = numbers.insert_after(iter, 3, 0);&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// добавляем три нуля</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, -2, -1, 0, 0, 0, 6, 7, 8 }</code
+                  >
+                </div>
+                <div class="line number23 index22 alt2">&nbsp;</div>
+                <div class="line number24 index23 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&gt; values = { 1, 2, 3 };</code>
+                </div>
+                <div class="line number25 index24 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >iter = numbers.insert_after(iter, values.begin(),
+                    values.end()); </code
+                  ><code class="cpp comments"
+                    >// добавляем все элементы из values</code
+                  >
+                </div>
+                <div class="line number26 index25 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, -2, -1, 0, 0, 0, 1, 2, 3, 6, 7, 8
+                    }</code
+                  >
+                </div>
+                <div class="line number27 index26 alt2">&nbsp;</div>
+                <div class="line number28 index27 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >numbers.insert_after(iter, { 4, 5 }); </code
+                  ><code class="cpp comments"
+                    >// добавляем список { 4, 5 }</code
+                  >
+                </div>
+                <div class="line number29 index28 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp comments"
+                    >// numbers =&nbsp; { -3, -2, -1, 0, 0, 0, 1, 2, 3, 4, 5, 6,
+                    7, 8 }</code
+                  >
+                </div>
+                <div class="line number30 index29 alt1">&nbsp;</div>
+                <div class="line number31 index30 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">for</code
+                  ><code class="cpp plain">(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">n : numbers)</code>
+                </div>
+                <div class="line number32 index31 alt1">
+                  <code class="cpp spaces"
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; n &lt;&lt; </code
+                  ><code class="cpp string">"\t"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number33 index32 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number34 index33 alt1">&nbsp;</div>
+                <div class="line number35 index34 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number36 index35 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Удаление элементов</h3>
+  <p>
+    Чтобы удалить элемент из контейнера forward_list можно использовать
+    следующие функции:
+  </p>
+  <ul>
+    <li>
+      <p><span class="b">clear()</span>: удаляет все элементы</p>
+    </li>
+    <li>
+      <p><span class="b">pop_front()</span>: удаляет первый элемент</p>
+    </li>
+    <li>
+      <p>
+        <span class="b">erase_after(p)</span>: удаляет элемент после элемента,
+        на который указывает итератор p. Возвращает итератор на элемент после
+        удаленного
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">erase_after(begin, end)</span>: удаляет диапазон
+        элементов, на начало и конец которого указывают соответственно итераторы
+        begin и end. Возвращает итератор на элемент после последнего удаленного
+      </p>
+    </li>
+  </ul>
+  <p>Использование функций:</p>
+  <div>
+    <div id="highlighter_635991" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::forward_list&lt;</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain"
+                    >&gt; numbers = { 1, 2, 3, 4, 5, 6, 7};</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">numbers.pop_front();</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp comments"
+                    >// numbers = { 2, 3, 4, 5, 6, 7};</code
+                  >
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain"
+                    >auto iter = numbers.erase_after(numbers.begin());</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp comments"
+                    >// numbers = { 2, 4, 5, 6, 7 };</code
+                  >
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp comments"
+                    >// iter указывает на элемент 4</code
+                  >
+                </div>
+                <div class="line number9 index8 alt2">&nbsp;</div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp plain"
+                    >numbers.erase_after(iter, numbers.end());</code
+                  >
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp comments">// numbers = { 2, 4 };</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

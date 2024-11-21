@@ -1,0 +1,363 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Операции присваивания</h2>
+  <p>
+    Операции присваивания позволяют присвоить некоторое значения. Эти операции
+    выполняются над двумя операндами, причем левый операнд может представлять
+    только модифицируемое именованное выражение, например, переменную.
+  </p>
+  <p>
+    Базовая операция присваивания <span class="b">=</span> позволяет присвоить
+    значение правого операнда левому операнду:
+  </p>
+  <div>
+    <div id="highlighter_676682" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x; </code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">x = 2</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    То есть в данном случае переменная x (левый операнд) будет иметь значение 2
+    (правый операнд).
+  </p>
+  <p>
+    Стоит отметить, что тип значения правого операнда не всегда может совпадать
+    с типом левого операнда. В этом случае компилятор пытается преобразовать
+    значение правого операнда к типу левого операнда.
+  </p>
+  <p>
+    При этом операции присваивания имеют правосторонний порядок, то есть
+    выполняются справа налево. И, таким образом, можно выполнять множественное
+    присваивание:
+  </p>
+  <div>
+    <div id="highlighter_709361" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, b, c;&nbsp;&nbsp;&nbsp; </code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">a = b = c = 34;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Здесь сначала вычисляется значение выражения <code>c = 34</code>. Значение
+    правого операнда - <code>34</code> присваивается левому операнду с. Далее
+    вычисляется выражение <code>b = c</code>: значение правого операнда
+    <span class="b">c</span> (34) присваивается левому операнду
+    <span class="b">b</span>. И в конце вычисляется выражение
+    <code>a = b</code>: значение правого операнда <span class="b">b</span> (34)
+    присваивается левому операнду <span class="b">a</span>.
+  </p>
+  <p>
+    Кроме того, следует отметить, что операции присваивания имеют наименьший
+    приоритет по сравнению с другими типами операций, поэтому выполняются в
+    последнюю очередь:
+  </p>
+  <div>
+    <div id="highlighter_204165" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">x;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">x = 3 + 5;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В соответствии с приоритетом операций вначале выполняется выражение
+    <code>3 + 5</code>, и только потом его значение присваивается переменной x.
+  </p>
+  <p>
+    Все остальные операции присваивания являются сочетанием простой операции
+    присваивания с другими операциями:
+  </p>
+  <ul>
+    <li>
+      <p>
+        <span class="b">+=</span>: присваивание после сложения. Присваивает
+        левому операнду сумму левого и правого операндов:
+        <span class="b">A += B</span> эквивалентно
+        <span class="b">A = A + B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">-=</span>: присваивание после вычитания. Присваивает
+        левому операнду разность левого и правого операндов:
+        <span class="b">A -= B</span> эквивалентно
+        <span class="b">A = A - B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">*=</span>: присваивание после умножения. Присваивает
+        левому операнду произведение левого и правого операндов:
+        <span class="b">A *= B</span> эквивалентно
+        <span class="b">A = A * B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">/=</span>: присваивание после деления. Присваивает
+        левому операнду частное левого и правого операндов:
+        <span class="b">A /= B</span> эквивалентно
+        <span class="b">A = A / B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">%=</span>: присваивание после деления по модулю.
+        Присваивает левому операнду остаток от целочисленного деления левого
+        операнда на правый: <span class="b">A %= B</span> эквивалентно
+        <span class="b">A = A % B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">&lt;&lt;=</span>: присваивание после сдвига разрядов
+        влево. Присваивает левому операнду результат сдвига его битового
+        представления влево на определенное количество разрядов, равное значению
+        правого операнда: <span class="b">A &lt;&lt;= B</span> эквивалентно
+        <span class="b">A = A &lt;&lt; B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">&gt;&gt;=</span>: присваивание после сдвига разрядов
+        вправо. Присваивает левому операнду результат сдвига его битового
+        представления вправо на определенное количество разрядов, равное
+        значению правого операнда:
+        <span class="b">A &gt;&gt;= B</span> эквивалентно
+        <span class="b">A = A &gt;&gt; B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">&amp;=</span>: присваивание после поразрядной
+        конъюнкции. Присваивает левому операнду результат поразрядной конъюнкции
+        его битового представления с битовым представлением правого операнда:
+        <span class="b">A &amp;= B</span> эквивалентно
+        <span class="b">A = A &amp; B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">|=</span>: присваивание после поразрядной дизъюнкции.
+        Присваивает левому операнду результат поразрядной дизъюнкции его
+        битового представления с битовым представлением правого операнда:
+        <span class="b">A |= B</span> эквивалентно
+        <span class="b">A = A | B</span>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span class="b">^=</span>: присваивание после операции исключающего ИЛИ.
+        Присваивает левому операнду результат операции исключающего ИЛИ его
+        битового представления с битовым представлением правого операнда:
+        <span class="b">A ^= B</span> эквивалентно
+        <span class="b">A = A ^ B</span>
+      </p>
+    </li>
+  </ul>
+  <p>Примеры операций:</p>
+  <div>
+    <div id="highlighter_852407" class="syntaxhighlighter c">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="c color1 bold">int</code>
+                  <code class="c plain">a = 5;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="c plain"
+                    >a += 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 15</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="c plain"
+                    >a -= 3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 12</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="c plain"
+                    >a *= 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 24</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="c plain"
+                    >a /= 6;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 4</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="c plain"
+                    >a &lt;&lt;= 4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 64</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="c plain"
+                    >a &gt;&gt;= 2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="c comments">// 16</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

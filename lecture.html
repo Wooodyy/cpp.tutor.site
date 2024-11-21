@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Лекции По С++</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <!-- Themify Icons-->
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="gtco-loader"></div>
+
+    <div id="page">
+      <nav class="gtco-nav" role="navigation" style="background-color: #333">
+        <div class="gtco-container">
+          <div class="row">
+            <div class="col-sm-2 col-xs-12">
+              <div id="gtco-logo">
+                <a href="index.html"><img src="images/logo.png" /></a>
+              </div>
+            </div>
+            <div class="col-xs-10 text-right menu-1">
+              <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О Разработчике</a></li>
+                <li>
+                  <a style="color: white" href="lectures.html">Лекции</a>
+                </li>
+                <li><a href="tests.html">Тесты</a></li>
+                <li><a href="labs.html">Лабораторные работы</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="gtco-section gtco-testimonial gtco-gray"
+        style="
+          margin-top: 0px;
+          margin-bottom: 0px;
+          background-color: white;
+          padding: 1em 0;
+        "
+      >
+        <style>
+          ul.breadcrumb li a {
+            font-family: Tahoma;
+            color: rgb(0, 82, 85);
+          }
+          ul.breadcrumb li a:hover {
+            color: rgb(174, 0, 255);
+          }
+          .BPbut:hover {
+            background-color: rgb(52, 225, 255);
+            color: black;
+          }
+          .BPbut {
+            border-radius: 15px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #17b794;
+            color: black;
+            margin-bottom: 15px;
+          }
+        </style>
+        <div class="gtco-container">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Главная</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="lectures.html">Лекции</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a id="lecturetitle" href="lectures.html"></a>
+            </li>
+            <li class="breadcrumb-item"><span id="lecturename"></span></li>
+          </ul>
+          <div style="float: left; cursor: pointer" onclick="previous()">
+            <a class="BPbut">&laquo; Предыдущий</a>
+          </div>
+          <div style="float: right; cursor: pointer" onclick="next()">
+            <a class="BPbut" id="adsd">Следующий &raquo;</a>
+          </div>
+          <div id="content"></div>
+          <div style="float: left; cursor: pointer" onclick="previous()">
+            <a class="BPbut">&laquo; Предыдущий</a>
+          </div>
+          <div style="float: right; cursor: pointer" onclick="next()">
+            <a class="BPbut" id="adsd">Следующий &raquo;</a>
+          </div>
+        </div>
+      </div>
+      <!-- END .gtco-services -->
+
+      <footer id="gtco-footer" class="gtco-section" role="contentinfo">
+        <div class="gtco-container">
+          <div class="row row-pb-md">
+            <div class="col-md-4 gtco-widget gtco-footer-paragraph">
+              <h3>С++</h3>
+              <p>
+                Уроки рассчитаны, в первую очередь на новичков, но будут полезны
+                и тем, кто уже имеет небольшой опыт в программировании. Мы
+                начнем с основных принципов и закончим данный курс уже на более
+                сложных примерах.
+              </p>
+            </div>
+            <div class="col-md-6 gtco-footer-link">
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="gtco-list-link">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О Разработчике</a></li>
+                    <li><a href="lectures.html">Лекции</a></li>
+                    <li><a href="tests.html">Тесты</a></li>
+                    <li><a href="labs.html">Лабораторные работы</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <a
+                      style="font-family: Montserrat"
+                      href="https://api.whatsapp.com/send?phone=77055561442&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C"
+                      >+7 700 682 71 88</a
+                    >
+                    <br />
+                    <a style="font-family: Montserrat">Бақтияров Әлқайдар</a>
+                    <br />
+                    <a style="font-family: Montserrat">18-ВТ-1</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      window.onload = function exampleFunction() {
+        var lectureNum = document.URL.substring(
+          document.URL.indexOf("?var1") + 6,
+          document.URL.indexOf("?var2")
+        );
+        var lectureName = document.URL.substring(
+          document.URL.indexOf("?var2") + 6,
+          document.URL.indexOf("?var3")
+        );
+        var lectureTitle = document.URL.substring(
+          document.URL.indexOf("?var3") + 6,
+          document.URL.length
+        );
+        lectureTitle = decodeURI(lectureTitle);
+        lectureName = decodeURI(lectureName);
+        document.getElementById("content").innerHTML =
+          '<object id="myobject"  data="/лекции/' +
+          lectureNum +
+          '.html" style="width:100%; height:900px"  ></object>';
+        document.getElementById("lecturetitle").innerText = lectureTitle;
+        document.getElementById("lecturename").innerText = lectureName;
+        document.title = lectureNum;
+      };
+
+      let lists = [
+        "?var1=1.1?var2=%D0%AF%D0%B7%D1%8B%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20C++",
+        "?var1=1.2?var2=%D0%9F%D0%B5%D1%80%D0%B2%D0%B0%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%B2%20Visual%20Studio?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20C++",
+        "?var1=1.3?var2=%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D1%86%D0%B0%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201.%20%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20C++",
+        "?var1=2.1?var2=%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.2?var2=%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.3?var2=%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.4?var2=%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D1%82%D0%B8%D0%BF%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%20%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%82%D0%B8%D0%BF%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.5?var2=%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.6?var2=%D0%90%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.7?var2=%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.8?var2=%D0%9F%D0%BE%D0%B1%D0%B8%D1%82%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.9?var2=%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D1%80%D0%B8%D1%81%D0%B2%D0%B0%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.10?var2=%D0%92%D0%B2%D0%BE%D0%B4%20%D0%B8%20%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%20%D0%B2%20%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.11?var2=%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%B0%20%D0%B8%D0%BC%D0%B5%D0%BD%20%D0%B8%20using?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.12?var2=%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.13?var2=%D0%A6%D0%B8%D0%BA%D0%BB%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.14?var2=%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.15?var2=%D0%9C%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=2.16?var2=%D0%A1%D1%82%D1%80%D0%BE%D0%BA%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202.%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20C++",
+        "?var1=3.1?var2=%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.2?var2=%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.3?var2=%D0%9F%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B0%20%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BF%D0%BE%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%B8%20%D0%BF%D0%BE%20%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.4?var2=%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.5?var2=%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20return%20%D0%B8%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.6?var2=%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.7?var2=%D0%9E%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%20%D0%B2%D0%B8%D0%B4%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.8?var2=%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B%20%D0%BD%D0%B0%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=3.9?var2=%D0%92%D0%BD%D0%B5%D1%88%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203.%20%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8",
+        "?var1=4.1?var2=%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.2?var2=%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8%20%D1%81%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.3?var2=%D0%90%D1%80%D0%B8%D1%84%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D0%B0%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.4?var2=%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B%20%D0%B8%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.5?var2=%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8%20%D0%B8%20%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.6?var2=%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8%20%D0%B2%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B0%D1%85%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.7?var2=%D0%9C%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B%20%D0%B2%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B0%D1%85%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.8?var2=%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8%20%D0%BD%D0%B0%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.9?var2=%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8%20%D0%BD%D0%B0%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.10?var2=%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8E%20%D0%BA%D0%B0%D0%BA%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D0%BC%D0%BE%D0%B5%20%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.11?var2=%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=4.12?var2=%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204.%20%D0%A3%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D0%B5%D0%BB%D0%B8",
+        "?var1=5.1?var2=%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.2?var2=%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80%D1%8B%20%D0%B8%20%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.3?var2=%D0%9E%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.4?var2=%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%BE%D0%BC.%20%D0%98%D0%BD%D0%BA%D0%B0%D0%BF%D1%81%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.5?var2=%D0%94%D1%80%D1%83%D0%B6%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.6?var2=%D0%9A%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D0%BE%D0%B5%20%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%20this?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.7?var2=%D0%A1%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D0%BB%D0%B5%D0%BD%D1%8B%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.8?var2=%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.9?var2=%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.10?var2=%D0%9D%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.11?var2=%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B8%D1%85%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.12?var2=%D0%90%D0%B1%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.13?var2=%D0%94%D0%B5%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.14?var2=%D0%9F%D0%B5%D1%80%D0%B5%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=5.15?var2=%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B%20%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%82%D0%B8%D0%BF%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205.%20%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5",
+        "?var1=6.1?var2=%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%206.%20%D0%98%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F",
+        "?var1=6.2?var2=%D0%A2%D0%B8%D0%BF%20exception?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%206.%20%D0%98%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F",
+        "?var1=6.3?var2=%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B8%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B9?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%206.%20%D0%98%D1%81%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D1%8F",
+        "?var1=7.1?var2=%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.2?var2=%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.3?var2=%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.4?var2=%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8%20%D1%81%20%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0%D0%BC%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.5?var2=Array?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.6?var2=List?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.7?var2=Forward_list?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=7.8?var2=Deque?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%207.%20%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B",
+        "?var1=8.1?var2=%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5%20%D1%82%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D1%81%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%208.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0",
+        "?var1=8.2?var2=%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%D0%B8.%20%D0%9E%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5%20%D0%B8%20%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%208.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0",
+        "?var1=8.3?var2=%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%208.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0",
+        "?var1=8.4?var2=%D0%9F%D0%B5%D1%80%D0%B5%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BE%D0%B2%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0%20%D0%B8%20%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0?var3=%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%208.%20%D0%9F%D0%BE%D1%82%D0%BE%D0%BA%D0%B8%20%D0%B8%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0",
+      ];
+
+      function previous() {
+        const hello = document.URL;
+        const key = "?var";
+        const firstPos = document.URL.indexOf(key);
+        var str1 = document.URL.substring(0, firstPos);
+        var str2 = document.URL.substring(firstPos, document.URL.length);
+
+        if (lists.indexOf(str2) != 0) {
+          document.location.href = str1 + lists[lists.indexOf(str2) - 1];
+        } else {
+          document.location.href = str1 + lists[69];
+        }
+      }
+      function next() {
+        const hello = document.URL;
+        const key = "?var";
+        const firstPos = document.URL.indexOf(key);
+        var str1 = document.URL.substring(0, firstPos);
+        var str2 = document.URL.substring(firstPos, document.URL.length);
+
+        if (lists.indexOf(str2) != 69) {
+          document.location.href = str1 + lists[lists.indexOf(str2) + 1];
+        } else {
+          document.location.href = str1 + lists[0];
+        }
+      }
+    </script>
+
+    <div class="gototop js-top">
+      <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+    <!--Подключение JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

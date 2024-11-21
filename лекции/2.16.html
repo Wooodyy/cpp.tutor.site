@@ -1,0 +1,1207 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Строки</h2>
+
+  <p>
+    Для хранения строк в C++ применяется тип <span class="b">string</span>. Для
+    использования этого типа его необходимо подключить в код с помощью директивы
+    <span class="b">include</span>:
+  </p>
+  <div>
+    <div id="highlighter_693476" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string hello = </code
+                  ><code class="cpp string">"Hello World!"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; hello &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Тип string определен в стандартной библиотеке и при его использовании надо
+    указывать пространство имен <span class="b">std</span>.
+  </p>
+  <p>
+    Либо можно использовать выражение using, чтобы не указывать префикс std:
+  </p>
+  <div>
+    <div id="highlighter_858702" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp keyword bold">using</code>
+                  <code class="cpp plain">std::string;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае значение переменной hello, которая представляет тип string,
+    выводится на консоль.
+  </p>
+  <p>
+    При компиляции через g++ может потребоваться указать флаг
+    <span class="ii">-static</span>. То есть если код определен в файл
+    hello.cpp, то команда на компиляцию для g++ может выглядеть следующим
+    образом:
+  </p>
+  <div>
+    <div id="highlighter_78012" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">g++ hello.cpp -o hello -</code
+                  ><code class="cpp keyword bold">static</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Для инициализации строк можно использовать различные способы:</p>
+  <div>
+    <div id="highlighter_739111" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string
+                    s1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// пустая строка</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string s2 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain"
+                    >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// hello</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string s3(</code
+                  ><code class="cpp string">"welcome"</code
+                  ><code class="cpp plain"
+                    >);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// welcome</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string s4(5, </code
+                  ><code class="cpp string">'h'</code
+                  ><code class="cpp plain">);&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// hhhhh</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::string s5 =
+                    s2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// hello</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; s1 &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; s2 &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; s3 &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; s4 &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; s5 &lt;&lt; </code
+                  ><code class="cpp string">"\n"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод данной программы:</p>
+  <div class="console">
+    <pre class="consoletext">
+hello
+welcome
+hhhhh
+hello
+</pre
+    >
+  </div>
+  <p>
+    Если при определении переменной типа string мы не присваиваем ей никакого
+    значения, то по умолчанию данная переменная содержит пустую строку:
+  </p>
+  <div>
+    <div id="highlighter_642356" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Также можно инициализировать переменную строчным литералом, который
+    заключается в двойные кавычки:
+  </p>
+  <div>
+    <div id="highlighter_807048" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s2 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В качестве альтернативы можно передавать строку в скобках после определения
+    переменной:
+  </p>
+  <div>
+    <div id="highlighter_951416" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s3(</code
+                  ><code class="cpp string">"welcome"</code
+                  ><code class="cpp plain">);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Если необходимо, чтобы строка содержала определенное количесто определеных
+    символов, то можно указать в скобках количество символов и сам символ:
+  </p>
+  <div>
+    <div id="highlighter_964104" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s4(5, </code
+                  ><code class="cpp string">'h'</code
+                  ><code class="cpp plain">);</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>И также можно передать переменной копию другой строки:</p>
+  <div>
+    <div id="highlighter_783258" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s5 = s2;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Конкатенация строк</h3>
+  <p>
+    Над строками можно выполнять ряд операций. В частности, можно объединять
+    строки с помощью стандартной операции сложения:
+  </p>
+  <div>
+    <div id="highlighter_287628" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">using</code>
+                  <code class="cpp plain">std::cout;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">using</code>
+                  <code class="cpp plain">std::endl;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp keyword bold">using</code>
+                  <code class="cpp plain">std::string;</code>
+                </div>
+                <div class="line number5 index4 alt2">&nbsp;</div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp plain">{&nbsp;&nbsp; </code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">string s1 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">string s2 = </code
+                  ><code class="cpp string">"world"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">string s3 = s1 + </code
+                  ><code class="cpp string">" "</code>
+                  <code class="cpp plain">+ s2; </code
+                  ><code class="cpp comments">// hello world</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >cout &lt;&lt; s3 &lt;&lt; endl;</code
+                  >
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Сравнение строк</h3>
+  <p>
+    К строкам можно применять операции сравнения. Оператор
+    <span class="b">==</span> возвращает true, если все символы обеих строк
+    равны.
+  </p>
+  <div>
+    <div id="highlighter_104580" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::string s2 = </code
+                  ><code class="cpp string">"world"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >result = s1 == s2;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// false</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">result = s1 == </code
+                  ><code class="cpp string">"Hello"</code
+                  ><code class="cpp plain">;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// false</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">result = s1 == </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// true</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>При этом символы должны совпадать в том числе по регистру.</p>
+  <p>
+    Операция <span class="b">!=</span> возвращает true, если две строки не
+    совпадают.
+  </p>
+  <div>
+    <div id="highlighter_874788" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::string s2 = </code
+                  ><code class="cpp string">"world"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >result = s1 != s2;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// true</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">result = s1 != </code
+                  ><code class="cpp string">"Hello"</code
+                  ><code class="cpp plain">;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// true</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">result = s1 != </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// false</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Остальные базовые операции сравнения <span class="b">&lt;</span>,
+    <span class="b">&lt;=</span>, <span class="b">&gt;</span>,
+    <span class="b">&gt;=</span> сравнивают строки в зависимости от регистра и
+    алфавитного порядка символов. Например, строка "b" условно больше строки
+    "a", так как символ b по алфавиту идет после символа a. А строка "a" больше
+    строки "A". Если первые символы строки равны, то сравниваются последующие
+    символы:
+  </p>
+  <div>
+    <div id="highlighter_941209" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1 = </code
+                  ><code class="cpp string">"Aport"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain">std::string s2 = </code
+                  ><code class="cpp string">"Apricot"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">bool</code>
+                  <code class="cpp plain"
+                    >result = s1 &gt; s2;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// false</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    В данном случае условие s1 &gt; s2 ложно, то есть s2 больше чем s1, так как
+    при равенстве первых двух символов ("Ap") третий символ второй строки ("o")
+    стоит в алфавите до третьего символа второй строки ("r"), то есть "o" меньше
+    чем "r".
+  </p>
+  <h3>Размер строки</h3>
+  <p>
+    С помощью метода <span class="b">size()</span> можно узнать размер строки,
+    то есть из скольких символов она состоит:
+  </p>
+  <div>
+    <div id="highlighter_514331" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1 = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; s1.size() &lt;&lt;
+                    std::endl;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// 5</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Если строка пустая, то она содержит 0 символов. В этом случае мы можем
+    применить метод <span class="b">empty()</span> - он возвращает true, если
+    строка пустая:
+  </p>
+  <div>
+    <div id="highlighter_881953" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string s1 = </code
+                  ><code class="cpp string">""</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp keyword bold">if</code
+                  ><code class="cpp plain">(s1.empty())</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"String is empty"</code>
+                  <code class="cpp plain">&lt;&lt; std::endl;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Чтение строки с консоли</h3>
+  <p>
+    Для считывания введенной строки с консоли можно использовать объект
+    std::cin:
+  </p>
+  <div>
+    <div id="highlighter_526703" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{&nbsp;&nbsp; </code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Input your name: "</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cin &gt;&gt; name;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Your name: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; name &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Input your name: Tom
+Your name: Tom
+</pre
+    >
+  </div>
+  <p>
+    Однако если при данном способе ввода строка будет содержать подстроки,
+    разделенные пробелом, то std::cin будет использовать только первую
+    подстроку:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+Input your name: Tom Smith
+Your name: Tom
+</pre
+    >
+  </div>
+  <p>
+    Чтобы считать всю строку, применяется метод
+    <span class="b">getline()</span>:
+  </p>
+  <div>
+    <div id="highlighter_932653" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp preprocessor">#include &lt;string&gt;</code>
+                </div>
+                <div class="line number3 index2 alt2">&nbsp;</div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp plain">{&nbsp;&nbsp; </code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::string name;</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Input your name: "</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">getline(std::cin, name);</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Your name: "</code>
+                  <code class="cpp plain"
+                    >&lt;&lt; name &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Метод getline принимает два объекта - std::cin и переменную, в которую надо
+    считать строку.
+  </p>
+  <p>Консольный вывод:</p>
+  <div class="console">
+    <pre class="consoletext">
+Input your name: Tom Smith
+Your name: Tom Smith
+</pre
+    >
+  </div>
+  <h3>Получение и изменение символов строки</h3>
+  <p>
+    Подобно массиву мы можем обращаться с помощью индексов к отдельным символам
+    строки, получать и изменять их:
+  </p>
+  <div>
+    <div id="highlighter_438323" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp plain">std::string hello = </code
+                  ><code class="cpp string">"Hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp color1 bold">char</code>
+                  <code class="cpp plain"
+                    >c = hello[1];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// e</code>
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp plain">hello[0]=</code
+                  ><code class="cpp string">'M'</code
+                  ><code class="cpp plain">;</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain"
+                    >std::cout &lt;&lt; hello &lt;&lt;
+                    std::endl;&nbsp;&nbsp;&nbsp; </code
+                  ><code class="cpp comments">// Mello</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>Символьные массивы</h3>
+  <p>
+    Массив символов, последний элемент которого представляет нулевой символ
+    '\0', может использоваться как строка:
+  </p>
+  <div>
+    <div id="highlighter_731495" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">
+                  <code class="cpp spaces">&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number4 index3 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">letters[] = {</code
+                  ><code class="cpp string">'h'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'e'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'l'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'l'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'o'</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp string">'\0'</code
+                  ><code class="cpp plain">};</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain"
+                    >std::cout &lt;&lt; letters &lt;&lt; std::endl;</code
+                  >
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Данный код выведет на консоль строку "hello". Подобное определение массива
+    строк будет также эквивалентно следующему:
+  </p>
+  <div>
+    <div id="highlighter_630133" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp color1 bold">char</code>
+                  <code class="cpp plain">letters[] = </code
+                  ><code class="cpp string">"hello"</code
+                  ><code class="cpp plain">;</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Однако подобное использование массива строк унаследовано от языка Си, а при
+    написании программ на С++ при работе со строками следует отдавать
+    предпочтение встроенному типу string, а не массиву символов.
+  </p>
+</div>

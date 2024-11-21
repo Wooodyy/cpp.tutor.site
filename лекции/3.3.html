@@ -1,0 +1,572 @@
+<style>
+  P {
+    text-indent: 2em; /* Отступ первой строки */
+    text-align: justify; /* Выравнивание по ширине */
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .consoletext {
+    background-color: black;
+    color: white;
+    font-family: Verdana;
+    font-size: 14px;
+  }
+  .console {
+    padding: 0px;
+    margin: 0px;
+  }
+  span {
+    font-weight: bold;
+  }
+  code {
+    font-weight: bold;
+    color: black;
+  }
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+    visibility: hidden;
+  }
+  .toolbar {
+    display: none;
+  }
+
+  .syntaxhighlighter {
+    padding-left: 5px;
+    color: rgb(0, 0, 0);
+    width: 98% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    max-height: 400px !important;
+  }
+  .syntaxhighlighter {
+    background-color: var(rgb(255, 0, 0)) !important;
+  }
+  .syntaxhighlighter {
+    width: 99% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+    height: auto;
+    border: silver 1px solid;
+    clear: both;
+  }
+</style>
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<div class="item center menC">
+  <h2>Передача аргументов по значению и по ссылке</h2>
+
+  <h3>Передача аргументов по значению</h3>
+  <p>
+    Аргументы могут передаваться по значению (by value) и по ссылке (by
+    reference). При передаче аргументов по значению внешний объект, который
+    передается в качестве аргумента в функцию, не может быть изменен в этой
+    функции. В функцию передается само значение этого объекта. Например:
+  </p>
+  <div>
+    <div id="highlighter_840472" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 4;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = 5;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Before square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">square(a, b);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"After square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number12 index11 alt1">&nbsp;</div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b)</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a = a * a;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">b = b * b;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"In square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Функция square принимает два числа и возводит их в квадрат. В функции main
+    перед и после выполнения функции square происходит вывод на консоль значений
+    переменных a и b, которые передаются в square в качестве аргументов.
+  </p>
+  <p>
+    И при выполнении мы увидим, что изменения аргументов в функции square
+    действуют только в рамках этой функции. Вне ее значения переменных a и b
+    остаются неизменными:
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+Before square: a = 4 	b = 5
+In square: a = 16		b = 25
+After square: a = 4 	b = 5
+</pre
+    >
+  </div>
+  <p>
+    Почему так происходит? При компиляции функции для ее параметров выделяются
+    отдельные участки памяти. При вызове функции вычисляются значения
+    аргументов, которые передаются на место параметров. И затем значения
+    аргументов заносятся в эти участки памяти. То есть функция манипулирует
+    копиями значений объектов, а не самими объектами.
+  </p>
+  <h3>Передача параметров по ссылке</h3>
+  <p>
+    При передаче параметров по ссылке передается ссылка на объект, через которую
+    мы можем манипулировать самим объектов, а не просто его значением. Так,
+    перепишем предыдущий пример, используя передачу по ссылке:
+  </p>
+  <div>
+    <div id="highlighter_467170" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&amp;, </code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">&amp;);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 4;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = 5;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Before square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">square(a, b);</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"After square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number12 index11 alt1">&nbsp;</div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number14 index13 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">&amp;a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">&amp;b)</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a = a * a;</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">b = b * b;</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"In square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Теперь параметры a и b передаются по ссылке. Ссылочный параметр связывается
+    непосредственно с объектом, поэтому через ссылку можно менять сам объект.
+  </p>
+  <p>И если мы скомпилируем и запустим программу, то результат будет иным:</p>
+  <div class="console">
+    <pre class="consoletext">
+Before square: a = 4 	b = 5
+In square: a = 16		b = 25
+After square: a = 16 	b = 25
+</pre
+    >
+  </div>
+  <p>
+    Передача по ссылке позволяет возвратить из функции сразу несколько значений.
+    Также передача параметров по ссылке является более эффективной при передаче
+    очень больших объектов. Поскольку в этом случае не происходит копирования
+    значений, а функция использует сам объект, а не его значение.
+  </p>
+  <p>
+    От передачи аргументов по ссылке следует отличать передачу ссылок в качестве
+    аргументов:
+  </p>
+  <div>
+    <div id="highlighter_900837" class="syntaxhighlighter cpp">
+      <div class="toolbar">
+        <span><a href="#" class="toolbar_item command_help help">?</a></span>
+      </div>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td class="gutter">
+              <div class="line number1 index0 alt2">1</div>
+              <div class="line number2 index1 alt1">2</div>
+              <div class="line number3 index2 alt2">3</div>
+              <div class="line number4 index3 alt1">4</div>
+              <div class="line number5 index4 alt2">5</div>
+              <div class="line number6 index5 alt1">6</div>
+              <div class="line number7 index6 alt2">7</div>
+              <div class="line number8 index7 alt1">8</div>
+              <div class="line number9 index8 alt2">9</div>
+              <div class="line number10 index9 alt1">10</div>
+              <div class="line number11 index10 alt2">11</div>
+              <div class="line number12 index11 alt1">12</div>
+              <div class="line number13 index12 alt2">13</div>
+              <div class="line number14 index13 alt1">14</div>
+              <div class="line number15 index14 alt2">15</div>
+              <div class="line number16 index15 alt1">16</div>
+              <div class="line number17 index16 alt2">17</div>
+              <div class="line number18 index17 alt1">18</div>
+              <div class="line number19 index18 alt2">19</div>
+              <div class="line number20 index19 alt1">20</div>
+              <div class="line number21 index20 alt2">21</div>
+              <div class="line number22 index21 alt1">22</div>
+            </td>
+            <td class="code">
+              <div class="container">
+                <div class="line number1 index0 alt2">
+                  <code class="cpp preprocessor"
+                    >#include &lt;iostream&gt;</code
+                  >
+                </div>
+                <div class="line number2 index1 alt1">&nbsp;</div>
+                <div class="line number3 index2 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">, </code
+                  ><code class="cpp color1 bold">int</code
+                  ><code class="cpp plain">);</code>
+                </div>
+                <div class="line number4 index3 alt1">&nbsp;</div>
+                <div class="line number5 index4 alt2">
+                  <code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">main()</code>
+                </div>
+                <div class="line number6 index5 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number7 index6 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a = 4;</code>
+                </div>
+                <div class="line number8 index7 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b = 5;</code>
+                </div>
+                <div class="line number9 index8 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">&amp;aRef = a;</code>
+                </div>
+                <div class="line number10 index9 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">&amp;bRef = b;</code>
+                </div>
+                <div class="line number11 index10 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"Before square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number12 index11 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">square(aRef, bRef);</code>
+                </div>
+                <div class="line number13 index12 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"After square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number14 index13 alt1">&nbsp;</div>
+                <div class="line number15 index14 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp keyword bold">return</code>
+                  <code class="cpp plain">0;</code>
+                </div>
+                <div class="line number16 index15 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+                <div class="line number17 index16 alt2">
+                  <code class="cpp keyword bold">void</code>
+                  <code class="cpp plain">square(</code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">a, </code
+                  ><code class="cpp color1 bold">int</code>
+                  <code class="cpp plain">b)</code>
+                </div>
+                <div class="line number18 index17 alt1">
+                  <code class="cpp plain">{</code>
+                </div>
+                <div class="line number19 index18 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">a = a * a;</code>
+                </div>
+                <div class="line number20 index19 alt1">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">b = b * b;</code>
+                </div>
+                <div class="line number21 index20 alt2">
+                  <code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code
+                  ><code class="cpp plain">std::cout &lt;&lt; </code
+                  ><code class="cpp string">"In square: a = "</code>
+                  <code class="cpp plain">&lt;&lt; a &lt;&lt; </code
+                  ><code class="cpp string">"\tb="</code>
+                  <code class="cpp plain">&lt;&lt; b &lt;&lt; std::endl;</code>
+                </div>
+                <div class="line number22 index21 alt1">
+                  <code class="cpp plain">}</code>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>
+    Если функция принимает аргументы по значению, то изменение параметров внутри
+    функции также никак не скажется на внешних объектах, даже если при вызове
+    функции в нее передаются ссылки на объекты.
+  </p>
+  <div class="console">
+    <pre class="consoletext">
+Before square: a = 4 	b = 5
+In square: a = 16		b = 25
+After square: a = 4 	b = 5
+</pre
+    >
+  </div>
+  <p>
+    Передача параметров по значению больше подходит для передачи в функцию
+    небольших объектов, значения которых копируются в определенные участки
+    памяти, которые потом использует функция.
+  </p>
+  <p>
+    Передача параметров по ссылке больше подходит для передачи в функцию больших
+    объектов, в этом случае не нужно копировать все содержимое объекта в участок
+    памяти, за счет чего увеличивается производительность программы.
+  </p>
+</div>
